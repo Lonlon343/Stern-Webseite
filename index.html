@@ -375,65 +375,256 @@
 
         /* ===== Scroll-Effekte & Microanimationen ===== */
         /* Scroll-Progress oben (dezent, rot) */
-        .a-progress{position:fixed;top:0;left:0;right:0;height:2px;background:transparent;z-index:40;pointer-events:none}
-        .a-progress .bar{height:100%;width:0;background:var(--gw-red);transition:width .08s linear}
+        .a-progress {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: transparent;
+            z-index: 40;
+            pointer-events: none
+        }
+
+        .a-progress .bar {
+            height: 100%;
+            width: 0;
+            background: var(--gw-red);
+            transition: width .08s linear
+        }
 
         /* Hero Parallax */
-        .a-hero .inner{will-change:transform}
-        .a-hero .gw-hero-video{will-change:transform}
+        .a-hero .inner {
+            will-change: transform
+        }
+
+        .a-hero .gw-hero-video {
+            will-change: transform
+        }
 
         /* Sticky-Scroll Leistungen: Kapitelblock links bleibt stehen, Items rechts scrollen */
-        .a-services .gw-container{padding:0 var(--gw-gutter)}
-        .a-services header{display:none}
-        .a-services .sticky-wrap{display:grid;grid-template-columns:1fr 1.5fr;gap:80px;align-items:start}
-        .a-services .sticky-chapter{position:sticky;top:96px;align-self:start;padding:40px 0}
-        .a-services .sticky-chapter .chap-no{font-family:var(--gw-font-mono);font-size:12px;letter-spacing:.18em;color:var(--gw-red);margin-bottom:22px;transition:opacity .3s}
-        .a-services .sticky-chapter h2{color:#fff;margin:0 0 28px;max-width:14ch}
-        .a-services .sticky-chapter .lead{color:rgba(255,255,255,.7);font-size:17px;max-width:42ch;line-height:1.55;margin:0 0 36px}
-        .a-services .sticky-chapter .progress-dots{display:flex;flex-direction:column;gap:14px;margin-top:12px}
-        .a-services .sticky-chapter .pd{display:flex;align-items:center;gap:14px;font-family:var(--gw-font-mono);font-size:11px;letter-spacing:.14em;color:rgba(255,255,255,.45);text-transform:uppercase;transition:color .3s}
-        .a-services .sticky-chapter .pd::before{content:"";width:22px;height:1px;background:rgba(255,255,255,.3);transition:width .4s,background .3s}
-        .a-services .sticky-chapter .pd.active{color:#fff}
-        .a-services .sticky-chapter .pd.active::before{width:42px;background:var(--gw-red)}
-        .a-services .list{border-top:none;padding:24px 0}
-        .a-services .item{grid-template-columns:60px 1fr 110px;padding:40px 0;border-bottom:1px solid rgba(255,255,255,.12);opacity:.35;transform:translateY(14px);transition:opacity .5s,transform .5s,padding .25s,background .25s}
-        .a-services .item.in{opacity:1;transform:none}
-        .a-services .item:first-child{border-top:1px solid rgba(255,255,255,.12)}
+        .a-services .gw-container {
+            padding: 0 var(--gw-gutter)
+        }
+
+        .a-services header {
+            display: none
+        }
+
+        .a-services .sticky-wrap {
+            display: grid;
+            grid-template-columns: 1fr 1.5fr;
+            gap: 80px;
+            align-items: start
+        }
+
+        .a-services .sticky-chapter {
+            position: sticky;
+            top: 96px;
+            align-self: start;
+            padding: 40px 0
+        }
+
+        .a-services .sticky-chapter .chap-no {
+            font-family: var(--gw-font-mono);
+            font-size: 12px;
+            letter-spacing: .18em;
+            color: var(--gw-red);
+            margin-bottom: 22px;
+            transition: opacity .3s
+        }
+
+        .a-services .sticky-chapter h2 {
+            color: #fff;
+            margin: 0 0 28px;
+            max-width: 14ch
+        }
+
+        .a-services .sticky-chapter .lead {
+            color: rgba(255, 255, 255, .7);
+            font-size: 17px;
+            max-width: 42ch;
+            line-height: 1.55;
+            margin: 0 0 36px
+        }
+
+        .a-services .sticky-chapter .progress-dots {
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+            margin-top: 12px
+        }
+
+        .a-services .sticky-chapter .pd {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            font-family: var(--gw-font-mono);
+            font-size: 11px;
+            letter-spacing: .14em;
+            color: rgba(255, 255, 255, .45);
+            text-transform: uppercase;
+            transition: color .3s
+        }
+
+        .a-services .sticky-chapter .pd::before {
+            content: "";
+            width: 22px;
+            height: 1px;
+            background: rgba(255, 255, 255, .3);
+            transition: width .4s, background .3s
+        }
+
+        .a-services .sticky-chapter .pd.active {
+            color: #fff
+        }
+
+        .a-services .sticky-chapter .pd.active::before {
+            width: 42px;
+            background: var(--gw-red)
+        }
+
+        .a-services .list {
+            border-top: none;
+            padding: 24px 0
+        }
+
+        .a-services .item {
+            grid-template-columns: 60px 1fr 110px;
+            padding: 40px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, .12);
+            opacity: .35;
+            transform: translateY(14px);
+            transition: opacity .5s, transform .5s, padding .25s, background .25s
+        }
+
+        .a-services .item.in {
+            opacity: 1;
+            transform: none
+        }
+
+        .a-services .item:first-child {
+            border-top: 1px solid rgba(255, 255, 255, .12)
+        }
 
         /* Reveal-Utility */
-        .reveal{opacity:0;transform:translateY(18px);transition:opacity .8s cubic-bezier(.2,.7,.3,1),transform .8s cubic-bezier(.2,.7,.3,1)}
-        .reveal.in{opacity:1;transform:none}
+        .reveal {
+            opacity: 0;
+            transform: translateY(18px);
+            transition: opacity .8s cubic-bezier(.2, .7, .3, 1), transform .8s cubic-bezier(.2, .7, .3, 1)
+        }
+
+        .reveal.in {
+            opacity: 1;
+            transform: none
+        }
 
         /* Hover-Effekte */
-        .a-projects .card{transition:transform .4s cubic-bezier(.2,.7,.3,1),box-shadow .4s}
-        .a-projects .card::after{content:"";position:absolute;inset:0;border:2px solid transparent;transition:border-color .25s;pointer-events:none;z-index:3}
-        .a-projects .card:hover{transform:translateY(-6px)}
-        .a-projects .card:hover::after{border-color:var(--gw-red)}
-        .a-projects .card:hover .meta .t{color:#fff}
+        .a-projects .card {
+            transition: transform .4s cubic-bezier(.2, .7, .3, 1), box-shadow .4s
+        }
 
-        .a-why .pillar{transition:background .25s;position:relative}
-        .a-why .pillar::before{content:"";position:absolute;left:0;top:0;bottom:0;width:2px;background:var(--gw-red);transform:scaleY(0);transform-origin:top;transition:transform .35s cubic-bezier(.2,.7,.3,1)}
-        .a-why .pillar:hover{background:#fff}
-        .a-why .pillar:hover::before{transform:scaleY(1)}
+        .a-projects .card::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            border: 2px solid transparent;
+            transition: border-color .25s;
+            pointer-events: none;
+            z-index: 3
+        }
+
+        .a-projects .card:hover {
+            transform: translateY(-6px)
+        }
+
+        .a-projects .card:hover::after {
+            border-color: var(--gw-red)
+        }
+
+        .a-projects .card:hover .meta .t {
+            color: #fff
+        }
+
+        .a-why .pillar {
+            transition: background .25s;
+            position: relative
+        }
+
+        .a-why .pillar::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: var(--gw-red);
+            transform: scaleY(0);
+            transform-origin: top;
+            transition: transform .35s cubic-bezier(.2, .7, .3, 1)
+        }
+
+        .a-why .pillar:hover {
+            background: #fff
+        }
+
+        .a-why .pillar:hover::before {
+            transform: scaleY(1)
+        }
 
         /* Stats Cascade */
-        .a-stats .cell{opacity:0;transform:translateY(10px);transition:opacity .7s,transform .7s}
-        .a-stats .cell.in{opacity:1;transform:none}
-        .a-stats .cell:nth-child(2){transition-delay:.08s}
-        .a-stats .cell:nth-child(3){transition-delay:.16s}
-        .a-stats .cell:nth-child(4){transition-delay:.24s}
+        .a-stats .cell {
+            opacity: 0;
+            transform: translateY(10px);
+            transition: opacity .7s, transform .7s
+        }
 
-        @media (prefers-reduced-motion: reduce){
-            .a-progress{display:none}
-            .reveal, .a-stats .cell, .a-services .item{opacity:1 !important;transform:none !important;transition:none !important}
-            .a-hero .inner, .a-hero .gw-hero-video{transform:none !important}
-            .a-services .sticky-chapter{position:static}
+        .a-stats .cell.in {
+            opacity: 1;
+            transform: none
+        }
+
+        .a-stats .cell:nth-child(2) {
+            transition-delay: .08s
+        }
+
+        .a-stats .cell:nth-child(3) {
+            transition-delay: .16s
+        }
+
+        .a-stats .cell:nth-child(4) {
+            transition-delay: .24s
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .a-progress {
+                display: none
+            }
+
+            .reveal,
+            .a-stats .cell,
+            .a-services .item {
+                opacity: 1 !important;
+                transform: none !important;
+                transition: none !important
+            }
+
+            .a-hero .inner,
+            .a-hero .gw-hero-video {
+                transform: none !important
+            }
+
+            .a-services .sticky-chapter {
+                position: static
+            }
         }
     </style>
 </head>
 
 <body data-screen-label="Variant A — Home (konservativ)">
-    <div class="a-progress"><div class="bar"></div></div>
+    <div class="a-progress">
+        <div class="bar"></div>
+    </div>
 
     <!-- NAV (overlaid on hero) -->
     <nav class="gw-nav">
@@ -530,10 +721,12 @@
         <div class="gw-container">
             <div class="sticky-wrap">
                 <aside class="sticky-chapter">
-                    <div class="chap-no" id="a-chap-no">§ 02 · Leistungen / <span id="a-chap-n">01</span> von 06</div>
-                    <div class="gw-eyebrow" style="color:rgba(255,255,255,.7);margin-bottom:18px"><span class="dot"></span>Leistungen</div>
+                    <div class="chap-no" id="a-chap-no">02 · Leistungen / <span id="a-chap-n">01</span> von 06</div>
+                    <div class="gw-eyebrow" style="color:rgba(255,255,255,.7);margin-bottom:18px"><span
+                            class="dot"></span>Leistungen</div>
                     <h2 class="gw-h2">Was wir für Sie umsetzen.</h2>
-                    <p class="lead">Sechs Kernbereiche, ein durchgängiger Qualitätsanspruch. Scrollen Sie durch, oder springen Sie direkt zu einem Bereich.</p>
+                    <p class="lead">Sechs Kernbereiche, ein durchgängiger Qualitätsanspruch. Scrollen Sie durch, oder
+                        springen Sie direkt zu einem Bereich.</p>
                     <div class="progress-dots">
                         <a href="#svc-1" class="pd active">01 · Hochbau</a>
                         <a href="#svc-2" class="pd">02 · Tiefbau</a>
@@ -546,44 +739,60 @@
                 <div class="list">
                     <div class="item" id="svc-1" data-idx="1">
                         <div class="no">01</div>
-                        <div><h3>Hochbau</h3>
-                        <p>Wohn-, Gewerbe- und Industriebau. Schlüsselfertig, nachhaltig, energieeffizient – vom Rohbau bis
-                            zum Innenausbau.</p></div>
+                        <div>
+                            <h3>Hochbau</h3>
+                            <p>Wohn-, Gewerbe- und Industriebau. Schlüsselfertig, nachhaltig, energieeffizient – vom
+                                Rohbau bis
+                                zum Innenausbau.</p>
+                        </div>
                         <div class="more">Mehr →</div>
                     </div>
                     <div class="item" id="svc-2" data-idx="2">
                         <div class="no">02</div>
-                        <div><h3>Tiefbau</h3>
-                        <p>Erd-, Kanal- und Straßenbau. Spezialtiefbau für anspruchsvolle Gründungen, Baugruben und
-                            Infrastrukturprojekte.</p></div>
+                        <div>
+                            <h3>Tiefbau</h3>
+                            <p>Erd-, Kanal- und Straßenbau. Spezialtiefbau für anspruchsvolle Gründungen, Baugruben und
+                                Infrastrukturprojekte.</p>
+                        </div>
                         <div class="more">Mehr →</div>
                     </div>
                     <div class="item" id="svc-3" data-idx="3">
                         <div class="no">03</div>
-                        <div><h3>Schlüsselfertigbau</h3>
-                        <p>Gesamtverantwortung aus einer Hand – ein Ansprechpartner, ein Festpreis, ein Termin für die
-                            Übergabe.</p></div>
+                        <div>
+                            <h3>Schlüsselfertigbau</h3>
+                            <p>Gesamtverantwortung aus einer Hand – ein Ansprechpartner, ein Festpreis, ein Termin für
+                                die
+                                Übergabe.</p>
+                        </div>
                         <div class="more">Mehr →</div>
                     </div>
                     <div class="item" id="svc-4" data-idx="4">
                         <div class="no">04</div>
-                        <div><h3>Sanierung &amp; Umbau</h3>
-                        <p>Denkmalgeschützte Substanz, Bestand im Betrieb, energetische Modernisierung – planbar und ohne
-                            Überraschungen.</p></div>
+                        <div>
+                            <h3>Sanierung &amp; Umbau</h3>
+                            <p>Denkmalgeschützte Substanz, Bestand im Betrieb, energetische Modernisierung – planbar und
+                                ohne
+                                Überraschungen.</p>
+                        </div>
                         <div class="more">Mehr →</div>
                     </div>
                     <div class="item" id="svc-5" data-idx="5">
                         <div class="no">05</div>
-                        <div><h3>Projektsteuerung</h3>
-                        <p>Bauleitung, Ausschreibung, Vergabe, Controlling. Für Bauherren, die ihr Vorhaben in erfahrene
-                            Hände geben wollen.</p></div>
+                        <div>
+                            <h3>Projektsteuerung</h3>
+                            <p>Bauleitung, Ausschreibung, Vergabe, Controlling. Für Bauherren, die ihr Vorhaben in
+                                erfahrene
+                                Hände geben wollen.</p>
+                        </div>
                         <div class="more">Mehr →</div>
                     </div>
                     <div class="item" id="svc-6" data-idx="6">
                         <div class="no">06</div>
-                        <div><h3>Netzwerk &amp; Nachunternehmer</h3>
-                        <p>Langjährig eingespielte Fachpartner – Rohbau, TGA, Ausbau, Außenanlagen. Qualität durch
-                            Kontinuität.</p></div>
+                        <div>
+                            <h3>Netzwerk &amp; Nachunternehmer</h3>
+                            <p>Langjährig eingespielte Fachpartner – Rohbau, TGA, Ausbau, Außenanlagen. Qualität durch
+                                Kontinuität.</p>
+                        </div>
                         <div class="more">Mehr →</div>
                     </div>
                 </div>
@@ -758,65 +967,65 @@
     </footer>
 
     <script>
-    (function(){
-      var reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
-      if(reduce) return;
+        (function () {
+            var reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+            if (reduce) return;
 
-      // Scroll-Progress
-      var bar = document.querySelector('.a-progress .bar');
-      // Hero parallax
-      var heroInner = document.querySelector('.a-hero .inner');
-      var heroVid = document.querySelector('.a-hero .gw-hero-video');
-      var heroSec = document.querySelector('.a-hero');
+            // Scroll-Progress
+            var bar = document.querySelector('.a-progress .bar');
+            // Hero parallax
+            var heroInner = document.querySelector('.a-hero .inner');
+            var heroVid = document.querySelector('.a-hero .gw-hero-video');
+            var heroSec = document.querySelector('.a-hero');
 
-      function onScroll(){
-        var y = window.scrollY || 0;
-        var h = document.documentElement.scrollHeight - window.innerHeight;
-        if(bar) bar.style.width = Math.max(0, Math.min(1, y / h)) * 100 + '%';
-        if(heroSec){
-          var rect = heroSec.getBoundingClientRect();
-          if(rect.bottom > 0){
-            // Text schneller raus (1.4x), Video langsamer (0.4x)
-            if(heroInner) heroInner.style.transform = 'translate3d(0,' + (-y * 0.45) + 'px,0)';
-            if(heroVid)   heroVid.style.transform   = 'translate3d(0,' + ( y * 0.15) + 'px,0)';
-          }
-        }
-      }
-      window.addEventListener('scroll', onScroll, {passive:true});
-      onScroll();
+            function onScroll() {
+                var y = window.scrollY || 0;
+                var h = document.documentElement.scrollHeight - window.innerHeight;
+                if (bar) bar.style.width = Math.max(0, Math.min(1, y / h)) * 100 + '%';
+                if (heroSec) {
+                    var rect = heroSec.getBoundingClientRect();
+                    if (rect.bottom > 0) {
+                        // Text schneller raus (1.4x), Video langsamer (0.4x)
+                        if (heroInner) heroInner.style.transform = 'translate3d(0,' + (-y * 0.45) + 'px,0)';
+                        if (heroVid) heroVid.style.transform = 'translate3d(0,' + (y * 0.15) + 'px,0)';
+                    }
+                }
+            }
+            window.addEventListener('scroll', onScroll, { passive: true });
+            onScroll();
 
-      // Reveal-Observer für items, stats, reveal-Utility
-      var io = new IntersectionObserver(function(entries){
-        entries.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
-      }, {threshold:.15, rootMargin:'0px 0px -60px 0px'});
-      document.querySelectorAll('.a-services .item, .a-stats .cell, .reveal').forEach(function(n){ io.observe(n); });
+            // Reveal-Observer für items, stats, reveal-Utility
+            var io = new IntersectionObserver(function (entries) {
+                entries.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+            }, { threshold: .15, rootMargin: '0px 0px -60px 0px' });
+            document.querySelectorAll('.a-services .item, .a-stats .cell, .reveal').forEach(function (n) { io.observe(n); });
 
-      // Sticky-Chapter: aktives Item tracken
-      var items = document.querySelectorAll('.a-services .item');
-      var dots  = document.querySelectorAll('.a-services .pd');
-      var nLbl  = document.getElementById('a-chap-n');
-      var actIO = new IntersectionObserver(function(entries){
-        entries.forEach(function(e){
-          if(e.isIntersecting){
-            var idx = parseInt(e.target.dataset.idx, 10);
-            dots.forEach(function(d,i){ d.classList.toggle('active', i === idx-1); });
-            if(nLbl) nLbl.textContent = String(idx).padStart(2,'0');
-          }
-        });
-      }, {threshold:.5, rootMargin:'-30% 0px -30% 0px'});
-      items.forEach(function(n){ actIO.observe(n); });
+            // Sticky-Chapter: aktives Item tracken
+            var items = document.querySelectorAll('.a-services .item');
+            var dots = document.querySelectorAll('.a-services .pd');
+            var nLbl = document.getElementById('a-chap-n');
+            var actIO = new IntersectionObserver(function (entries) {
+                entries.forEach(function (e) {
+                    if (e.isIntersecting) {
+                        var idx = parseInt(e.target.dataset.idx, 10);
+                        dots.forEach(function (d, i) { d.classList.toggle('active', i === idx - 1); });
+                        if (nLbl) nLbl.textContent = String(idx).padStart(2, '0');
+                    }
+                });
+            }, { threshold: .5, rootMargin: '-30% 0px -30% 0px' });
+            items.forEach(function (n) { actIO.observe(n); });
 
-      // Smooth-Scroll für Kapitel-Dots
-      dots.forEach(function(d){
-        d.addEventListener('click', function(e){
-          var href = d.getAttribute('href');
-          if(!href || href.charAt(0) !== '#') return;
-          e.preventDefault();
-          var t = document.querySelector(href);
-          if(t) t.scrollIntoView({behavior:'smooth', block:'center'});
-        });
-      });
-    })();
+            // Smooth-Scroll für Kapitel-Dots
+            dots.forEach(function (d) {
+                d.addEventListener('click', function (e) {
+                    var href = d.getAttribute('href');
+                    if (!href || href.charAt(0) !== '#') return;
+                    e.preventDefault();
+                    var t = document.querySelector(href);
+                    if (t) t.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                });
+            });
+        })();
     </script>
 </body>
 
