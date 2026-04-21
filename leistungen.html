@@ -1,0 +1,215 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<title>GeoWorks Bau – Leistungen</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="shared/tokens.css">
+<link rel="stylesheet" href="shared/global.css">
+<style>
+/* Page specific styles */
+.l-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; padding: 48px 0 120px; }
+.l-card { border: 1px solid var(--gw-line); background: #fff; padding: 28px; display: flex; flex-direction: column; min-height: 480px; transition: .2s; }
+.l-card:hover { border-color: #ccc; box-shadow: 0 12px 40px rgba(0,0,0,.04); transform: translateY(-4px); }
+.l-card .num { font-family: var(--gw-font-mono); font-size: 12px; color: var(--gw-red); letter-spacing: .14em; }
+.l-card h3 { font-family: var(--gw-font-display); font-size: 28px; line-height: 1.1; letter-spacing: -0.015em; margin: 20px 0; font-weight: 600; }
+.l-card .img { background: var(--gw-paper); aspect-ratio: 4/3; position: relative; margin-bottom: 24px; }
+.l-card .img .cap { position: absolute; left: 10px; bottom: 10px; font-family: var(--gw-font-mono); font-size: 10px; letter-spacing: .12em; text-transform: uppercase; background: #fff; padding: 4px 6px; }
+.l-card ul { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 6px; font-size: 14px; color: var(--gw-muted); }
+.l-card ul li::before { content: "— "; color: var(--gw-line); }
+.l-card .foot { margin-top: auto; padding-top: 20px; border-top: 1px dashed var(--gw-line); font-family: var(--gw-font-mono); font-size: 11px; letter-spacing: .12em; text-transform: uppercase; display: flex; justify-content: space-between; }
+.l-card .foot a { color: var(--gw-red); }
+
+/* Process strip */
+.l-process { padding: 120px 0; border-top: 1px solid var(--gw-line); background: #fff; }
+.l-steps { display: grid; grid-template-columns: repeat(5, 1fr); gap: 0; border-top: 1px solid var(--gw-line); border-left: 1px solid var(--gw-line); margin-top: 48px; }
+.l-step { padding: 32px 24px; border-right: 1px solid var(--gw-line); border-bottom: 1px solid var(--gw-line); position: relative; min-height: 220px; }
+.l-step .n { font-family: var(--gw-font-mono); font-size: 12px; color: var(--gw-red); letter-spacing: .14em; }
+.l-step h4 { font-family: var(--gw-font-display); font-size: 18px; margin: 16px 0 10px; font-weight: 600; }
+.l-step p { font-size: 14px; color: var(--gw-muted); margin: 0; line-height: 1.5; }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="gw-nav gw-nav--solid">
+  <a class="gw-logo" href="index.html"><span class="mark"></span> GeoWorks<span style="opacity:.6;font-weight:400">·Bau</span></a>
+  <ul>
+    <li><a href="index.html">Startseite</a></li>
+    <li><a href="leistungen.html" class="active">Leistungen</a></li>
+    <li><a href="referenzen.html">Referenzen</a></li>
+    <li><a href="ueber-uns.html">Über uns</a></li>
+    <li><a href="karriere.html">Karriere</a></li>
+    <li><a href="kontakt.html">Kontakt</a></li>
+  </ul>
+  <div class="actions">
+    <span class="phone">T +49 176 301 89 229</span>
+    <a href="#" class="gw-btn gw-btn--red">Projekt anfragen <span class="arr">→</span></a>
+  </div>
+</nav>
+
+<!-- HEADER -->
+<header class="page-header">
+  <div class="gw-container">
+    <div class="grid">
+      <div>
+        <div class="gw-eyebrow eyebrow"><span class="dot"></span>Leistungen / 6 Bereiche</div>
+        <h1>Was wir für<br>Sie <u>umsetzen.</u></h1>
+      </div>
+      <div>
+        <p>Sechs Kernbereiche, ein durchgängiger Qualitätsanspruch. Wählen Sie einen Bereich für Details, technische Schwerpunkte und passende Referenzen.</p>
+        <div class="kpi-row">
+          <div><b>6</b><div class="gw-mono" style="color:var(--gw-muted);margin-top:4px">Leistungsbereiche</div></div>
+          <div><b>140<sup>+</sup></b><div class="gw-mono" style="color:var(--gw-muted);margin-top:4px">Projekte</div></div>
+          <div><b>35</b><div class="gw-mono" style="color:var(--gw-muted);margin-top:4px">Mitarbeiter</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- CONTENT -->
+<section style="background:var(--gw-white)">
+  <div class="gw-container">
+    
+    <div class="filter-bar">
+      <div class="chips">
+        <div class="chip on">Alle</div>
+        <div class="chip">Hochbau</div>
+        <div class="chip">Tiefbau</div>
+        <div class="chip">Sanierung</div>
+        <div class="chip">Projektsteuerung</div>
+      </div>
+      <div class="gw-mono" style="color:var(--gw-muted)">Sortiert nach <u style="color:var(--gw-ink);cursor:pointer">Relevanz</u> · Alphabetisch</div>
+    </div>
+
+    <div class="l-grid">
+      <div class="l-card">
+        <div class="num">01</div>
+        <h3>Hochbau</h3>
+        <div class="img gw-ph"><span class="cap">IMG · HOCHBAU</span></div>
+        <ul><li>Schlüsselfertig</li><li>Gewerbe / Wohnen / Industrie</li><li>Neubau &amp; Umbau</li></ul>
+        <div class="foot"><span>Details</span><a href="#">Zur Seite →</a></div>
+      </div>
+      <div class="l-card">
+        <div class="num">02</div>
+        <h3>Tiefbau</h3>
+        <div class="img gw-ph"><span class="cap">IMG · TIEFBAU</span></div>
+        <ul><li>Erd- und Kanalbau</li><li>Straßenbau</li><li>Spezialtiefbau</li></ul>
+        <div class="foot"><span>Details</span><a href="#">Zur Seite →</a></div>
+      </div>
+      <div class="l-card">
+        <div class="num">03</div>
+        <h3>Schlüsselfertigbau</h3>
+        <div class="img gw-ph"><span class="cap">IMG · SCHLÜSSELFERTIG</span></div>
+        <ul><li>GU-Leistung</li><li>Festpreis &amp; Termin</li><li>Ein Ansprechpartner</li></ul>
+        <div class="foot"><span>Details</span><a href="#">Zur Seite →</a></div>
+      </div>
+      <div class="l-card">
+        <div class="num">04</div>
+        <h3>Sanierung &amp; Umbau</h3>
+        <div class="img gw-ph"><span class="cap">IMG · SANIERUNG</span></div>
+        <ul><li>Denkmalsubstanz</li><li>Bestand im Betrieb</li><li>Energetisch</li></ul>
+        <div class="foot"><span>Details</span><a href="#">Zur Seite →</a></div>
+      </div>
+      <div class="l-card">
+        <div class="num">05</div>
+        <h3>Projektsteuerung</h3>
+        <div class="img gw-ph"><span class="cap">IMG · STEUERUNG</span></div>
+        <ul><li>Bauleitung</li><li>Ausschreibung / Vergabe</li><li>Controlling</li></ul>
+        <div class="foot"><span>Details</span><a href="#">Zur Seite →</a></div>
+      </div>
+      <div class="l-card">
+        <div class="num">06</div>
+        <h3>Netzwerk &amp; Nachunternehmer</h3>
+        <div class="img gw-ph"><span class="cap">IMG · NETZWERK</span></div>
+        <ul><li>Langjährige Fachpartner</li><li>Rohbau, TGA, Ausbau</li><li>Qualität durch Kontinuität</li></ul>
+        <div class="foot"><span>Details</span><a href="#">Zur Seite →</a></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section class="l-process">
+  <div class="gw-container">
+    <div class="gw-eyebrow"><span class="dot"></span>Ablauf</div>
+    <h2 class="gw-h2" style="margin-top:16px">So arbeiten wir.</h2>
+    
+    <div class="l-steps">
+      <div class="l-step">
+        <div class="n">01</div>
+        <h4>Anfrage</h4>
+        <p>Telefon oder Formular. Unterlagen hochladen.</p>
+      </div>
+      <div class="l-step">
+        <div class="n">02</div>
+        <h4>Erstgespräch</h4>
+        <p>Vor Ort oder digital. Einschätzung, Rahmen, Gewerke.</p>
+      </div>
+      <div class="l-step">
+        <div class="n">03</div>
+        <h4>Angebot</h4>
+        <p>Festpreis, Terminplan, Leistungsverzeichnis.</p>
+      </div>
+      <div class="l-step">
+        <div class="n">04</div>
+        <h4>Umsetzung</h4>
+        <p>Eigene Bauleitung, wöchentlicher Statusbericht.</p>
+      </div>
+      <div class="l-step">
+        <div class="n">05</div>
+        <h4>Übergabe</h4>
+        <p>Abnahme, Mängelbearbeitung, Gewährleistung.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="a-cta">
+  <div class="gw-container">
+    <div class="inner">
+      <div>
+        <div class="gw-eyebrow" style="color:rgba(255,255,255,.7)"><span class="dot"></span>Projekt planen</div>
+        <h2 class="gw-h2" style="margin-top:14px">Sie haben ein Vorhaben.<br>Wir haben das Team dafür.</h2>
+        <p>Rufen Sie uns an oder schicken Sie uns Ihre Unterlagen – wir melden uns innerhalb eines Werktages mit einer ersten Einschätzung zurück.</p>
+        <div class="row">
+          <a href="kontakt.html" class="gw-btn gw-btn--red">Projekt anfragen <span class="arr">→</span></a>
+          <a href="#" class="gw-btn gw-btn--ghost" style="color:#fff;border-color:rgba(255,255,255,.4)">+49 176 301 89 229</a>
+        </div>
+      </div>
+      <div style="font-family:var(--gw-font-mono);font-size:12px;color:rgba(255,255,255,.7);line-height:1.8;letter-spacing:.05em">
+        GEOWORKS BAU GMBH<br>
+        MUSTERSTRASSE 12<br>
+        00000 MUSTERSTADT<br>
+        STERN@GEOWORKSBAU.DE
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="a-foot">
+  <div class="gw-container">
+    <div class="grid">
+      <div>
+        <a class="gw-logo" href="index.html" style="color:#fff"><span class="mark"></span> GeoWorks·Bau</a>
+        <p style="margin-top:20px;max-width:36ch;color:rgba(255,255,255,.6)">Generalunternehmer für Hoch- und Tiefbau. Sitz in Musterstadt, deutschlandweit im Einsatz.</p>
+      </div>
+      <div><h4>Leistungen</h4><ul><li><a href="#">Hochbau</a></li><li><a href="#">Tiefbau</a></li><li><a href="#">Schlüsselfertig</a></li><li><a href="#">Sanierung</a></li><li><a href="#">Projektsteuerung</a></li></ul></div>
+      <div><h4>Unternehmen</h4><ul><li><a href="ueber-uns.html">Über uns</a></li><li><a href="referenzen.html">Referenzen</a></li><li><a href="karriere.html">Karriere</a></li><li><a href="kontakt.html">Kontakt</a></li></ul></div>
+      <div><h4>Kontakt</h4><ul><li>+49 176 301 89 229</li><li>stern@geoworksbau.de</li><li>Mo–Fr 08:00–18:00</li></ul></div>
+    </div>
+    <div class="legal">
+      <span>© 2026 GeoWorks Bau GmbH</span>
+      <span><a href="#">Impressum</a> · <a href="#">Datenschutz</a> · <a href="#">AGB</a></span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

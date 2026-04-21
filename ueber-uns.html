@@ -1,0 +1,184 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<title>GeoWorks Bau – Über uns</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="shared/tokens.css">
+<link rel="stylesheet" href="shared/global.css">
+<style>
+.section-body { padding: 120px 0; background: var(--gw-white); border-bottom: 1px solid var(--gw-line); }
+.split-content { display: grid; grid-template-columns: 1fr 1.4fr; gap: 80px; align-items: start; }
+.split-content p { font-size: 18px; line-height: 1.6; color: var(--gw-ink); margin-top: 0; margin-bottom: 24px; max-width: 52ch; }
+
+.history-timeline { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; margin-top: 64px; }
+.timeline-item { border-top: 2px solid var(--gw-red); padding-top: 24px; }
+.timeline-item .year { font-family: var(--gw-font-mono); font-size: 14px; color: var(--gw-red); letter-spacing: .1em; font-weight: 500; }
+.timeline-item h4 { font-family: var(--gw-font-display); font-size: 20px; font-weight: 600; margin: 12px 0 8px; }
+.timeline-item p { font-size: 14px; color: var(--gw-muted); line-height: 1.5; margin: 0; }
+
+.leadership-grid { margin-top: 64px; display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
+.leader-card { border: 1px solid var(--gw-line); display: flex; flex-direction: column; background: var(--gw-paper); }
+.leader-card .photo { aspect-ratio: 1; background: #ddd; position: relative; }
+.leader-card .info { padding: 32px; flex: 1; background: #fff;}
+.leader-card h3 { font-family: var(--gw-font-display); font-size: 24px; margin: 0 0 4px; font-weight: 600; }
+.leader-card .role { font-family: var(--gw-font-mono); font-size: 12px; color: var(--gw-red); letter-spacing: .1em; text-transform: uppercase; margin-bottom: 24px; }
+.leader-card p { font-size: 15px; color: var(--gw-muted); line-height: 1.55; margin: 0; }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="gw-nav gw-nav--solid">
+  <a class="gw-logo" href="index.html"><span class="mark"></span> GeoWorks<span style="opacity:.6;font-weight:400">·Bau</span></a>
+  <ul>
+    <li><a href="index.html">Startseite</a></li>
+    <li><a href="leistungen.html">Leistungen</a></li>
+    <li><a href="referenzen.html">Referenzen</a></li>
+    <li><a href="ueber-uns.html" class="active">Über uns</a></li>
+    <li><a href="karriere.html">Karriere</a></li>
+    <li><a href="kontakt.html">Kontakt</a></li>
+  </ul>
+  <div class="actions">
+    <span class="phone">T +49 176 301 89 229</span>
+    <a href="kontakt.html" class="gw-btn gw-btn--red">Projekt anfragen <span class="arr">→</span></a>
+  </div>
+</nav>
+
+<!-- HEADER -->
+<header class="page-header">
+  <div class="gw-container">
+    <div class="grid">
+      <div>
+        <div class="gw-eyebrow eyebrow"><span class="dot"></span>Über uns / Historie</div>
+        <h1>Der Partner für<br>Ihr <u>Vorhaben.</u></h1>
+      </div>
+      <div>
+        <p>GeoWorks Bau ist ein inhabergeführtes Bauunternehmen mit Sitz in Musterstadt. Wir stehen für transparente Kommunikation, Kostensicherheit und Termintreue.</p>
+        <div class="kpi-row">
+          <div><b>1998</b><div class="gw-mono" style="color:var(--gw-muted);margin-top:4px">Gegründet</div></div>
+          <div><b>35</b><div class="gw-mono" style="color:var(--gw-muted);margin-top:4px">Experten</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- PHILOSOPHY -->
+<section class="section-body">
+  <div class="gw-container">
+    <div class="split-content">
+      <div>
+        <h2 class="gw-h2" style="max-width: 14ch;">Mehr als nur Beton und Stahl.</h2>
+      </div>
+      <div>
+        <p>Seit unserer Gründung haben wir es uns zur Aufgabe gemacht, nicht nur Projekte zu übergeben, sondern Werte zu schaffen. Wir glauben an partnerschaftliches Bauen, bei dem Bauherr, Architekt und Generalunternehmen an einem Strang ziehen.</p>
+        <p>Als Generalunternehmer übernehmen wir die volle Verantwortung für das Gelingen Ihres Bauvorhabens. Wir koordinieren alle Gewerke, überwachen die Ausführung mit unserer eigenen Bauleitung und garantieren die Einhaltung des gemeinsam definierten Budgets und Zeitplans.</p>
+        <p>Unsere Stärke liegt im Netzwerk: Wir arbeiten seit Jahren mit den gleichen, hochqualifizierten Partnern zusammen. Das bedeutet für Sie: Keine Unbekannten auf der Baustelle, sondern ein eingespieltes Team, das weiß, worauf es ankommt.</p>
+      </div>
+    </div>
+
+    <!-- TIMELINE -->
+    <div class="history-timeline">
+      <div class="timeline-item">
+        <div class="year">1998</div>
+        <h4>Gründung</h4>
+        <p>Als kleines Ingenieurbüro in Musterstadt mit Fokus auf Projektsteuerung.</p>
+      </div>
+      <div class="timeline-item">
+        <div class="year">2005</div>
+        <h4>Erweiterung Tiefbau</h4>
+        <p>Eigene Bautrupps für den Tief- und Straßenbau werden aufgebaut.</p>
+      </div>
+      <div class="timeline-item">
+        <div class="year">2012</div>
+        <h4>Generalunternehmer</h4>
+        <p>Erste schlüsselfertige Übergaben von Wohnkomplexen und Gewerbebauten.</p>
+      </div>
+      <div class="timeline-item">
+        <div class="year">2026</div>
+        <h4>Zukunftsorientiert</h4>
+        <p>Fokus auf energetische Sanierung und nachhaltiges Bauen in 16 Bundesländern.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LEADERSHIP -->
+<section style="padding: 120px 0; background: var(--gw-paper)">
+  <div class="gw-container">
+    <div class="gw-eyebrow"><span class="dot"></span>Führungsteam</div>
+    <h2 class="gw-h2" style="margin-top:16px">Verantwortung leben.</h2>
+    
+    <div class="leadership-grid">
+      <div class="leader-card">
+        <div class="photo gw-ph">
+          <span class="gw-ph-cap">ALESSANDRO STERN</span>
+        </div>
+        <div class="info">
+          <h3>Alessandro Stern</h3>
+          <div class="role">Geschäftsführer</div>
+          <p>Als Gründer und Geschäftsführer leitet er die strategische Ausrichtung des Unternehmens. Er bringt über 25 Jahre Erfahrung in der Planung und Umsetzung von Großprojekten im Hoch- und Tiefbau mit sich und pflegt den direkten Draht zu unseren Bauherren.</p>
+        </div>
+      </div>
+      <!-- Placeholder for a second leader, optional but good for balance -->
+      <div class="leader-card">
+        <div class="photo gw-ph">
+          <span class="gw-ph-cap">JULIA MÜLLER</span>
+        </div>
+        <div class="info">
+          <h3>Julia Müller</h3>
+          <div class="role">Technische Leitung</div>
+          <p>Verantwortlich für die reibungslose Koordination der Bauabläufe und Nachunternehmer. Sie sorgt dafür, dass alle Qualitäts-, Kosten- und Terminziele in der Ausführungsphase präzise umgesetzt werden.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="a-cta">
+  <div class="gw-container">
+    <div class="inner">
+      <div>
+        <div class="gw-eyebrow" style="color:rgba(255,255,255,.7)"><span class="dot"></span>Projekt planen</div>
+        <h2 class="gw-h2" style="margin-top:14px">Teilen Sie unsere Werte?<br>Lassen Sie uns darüber sprechen.</h2>
+        <div class="row">
+          <a href="kontakt.html" class="gw-btn gw-btn--red">Projekt anfragen <span class="arr">→</span></a>
+          <a href="#" class="gw-btn gw-btn--ghost" style="color:#fff;border-color:rgba(255,255,255,.4)">+49 176 301 89 229</a>
+        </div>
+      </div>
+      <div style="font-family:var(--gw-font-mono);font-size:12px;color:rgba(255,255,255,.7);line-height:1.8;letter-spacing:.05em">
+        GEOWORKS BAU GMBH<br>
+        MUSTERSTRASSE 12<br>
+        00000 MUSTERSTADT<br>
+        STERN@GEOWORKSBAU.DE
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="a-foot">
+  <div class="gw-container">
+    <div class="grid">
+      <div>
+        <a class="gw-logo" href="index.html" style="color:#fff"><span class="mark"></span> GeoWorks·Bau</a>
+        <p style="margin-top:20px;max-width:36ch;color:rgba(255,255,255,.6)">Generalunternehmer für Hoch- und Tiefbau. Sitz in Musterstadt, deutschlandweit im Einsatz.</p>
+      </div>
+      <div><h4>Leistungen</h4><ul><li><a href="#">Hochbau</a></li><li><a href="#">Tiefbau</a></li><li><a href="#">Schlüsselfertig</a></li><li><a href="#">Sanierung</a></li><li><a href="#">Projektsteuerung</a></li></ul></div>
+      <div><h4>Unternehmen</h4><ul><li><a href="ueber-uns.html">Über uns</a></li><li><a href="referenzen.html">Referenzen</a></li><li><a href="karriere.html">Karriere</a></li><li><a href="kontakt.html">Kontakt</a></li></ul></div>
+      <div><h4>Kontakt</h4><ul><li>+49 176 301 89 229</li><li>stern@geoworksbau.de</li><li>Mo–Fr 08:00–18:00</li></ul></div>
+    </div>
+    <div class="legal">
+      <span>© 2026 GeoWorks Bau GmbH</span>
+      <span><a href="#">Impressum</a> · <a href="#">Datenschutz</a> · <a href="#">AGB</a></span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

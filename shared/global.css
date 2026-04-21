@@ -1,0 +1,95 @@
+/* Global styles extracted from Variant A */
+
+/* Global CTA section used across multiple pages */
+.a-cta{padding:120px 0;background:var(--gw-ink);color:#fff;position:relative;overflow:hidden}
+.a-cta::before{content:"";position:absolute;right:-200px;top:-200px;width:600px;height:600px;
+  background:var(--gw-red);mix-blend-mode:normal;clip-path:polygon(30% 0,100% 0,100% 70%,0 100%);opacity:.95}
+.a-cta .inner{position:relative;z-index:2;display:grid;grid-template-columns:1.4fr 1fr;gap:60px;align-items:end}
+.a-cta h2{color:#fff;max-width:16ch}
+.a-cta p{color:rgba(255,255,255,.75);font-size:18px;max-width:48ch;margin-top:24px}
+.a-cta .row{display:flex;gap:14px;margin-top:36px;flex-wrap:wrap}
+
+/* Global Footer */
+.a-foot{background:#111;color:rgba(255,255,255,.75);padding:72px 0 24px;font-size:14px}
+.a-foot .grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:40px}
+.a-foot h4{font-family:var(--gw-font-mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.55);margin:0 0 18px}
+.a-foot ul{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:10px}
+.a-foot .legal{margin-top:56px;padding-top:24px;border-top:1px solid rgba(255,255,255,.15);display:flex;justify-content:space-between;font-family:var(--gw-font-mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.5)}
+
+/* Standard Section Header (used on subpages) */
+.page-header {
+  padding: 160px 0 80px;
+  background: var(--gw-paper);
+  border-bottom: 1px solid var(--gw-line);
+}
+.page-header .grid {
+  display: grid;
+  grid-template-columns: 1fr 1.4fr;
+  gap: 80px;
+  align-items: end;
+}
+.page-header .eyebrow {
+  margin-bottom: 24px;
+}
+.page-header h1 {
+  font-family: var(--gw-font-display);
+  font-weight: 600;
+  letter-spacing: -0.03em;
+  line-height: 0.96;
+  font-size: clamp(48px, 6.4vw, 84px);
+  margin: 0;
+  max-width: 14ch;
+}
+.page-header h1 u {
+  text-decoration: none;
+  background: linear-gradient(180deg, transparent 65%, rgba(229,56,36,.25) 65%);
+}
+.page-header p {
+  font-size: 20px;
+  line-height: 1.55;
+  color: var(--gw-ink);
+  max-width: 56ch;
+  margin: 0;
+}
+.page-header .kpi-row {
+  display: flex;
+  gap: 40px;
+  margin-top: 32px;
+}
+.page-header .kpi-row b {
+  font-family: var(--gw-font-display);
+  font-size: 34px;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+
+/* Base utility for filter bar */
+.filter-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 24px 0;
+  border-bottom: 1px dashed var(--gw-line);
+}
+.filter-bar .chips {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+.filter-bar .chip {
+  border: 1px solid var(--gw-line);
+  padding: 8px 14px;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: 0.15s;
+}
+.filter-bar .chip:hover {
+  background: rgba(0,0,0,.03);
+}
+.filter-bar .chip.on {
+  background: var(--gw-ink);
+  border-color: var(--gw-ink);
+  color: #fff;
+}

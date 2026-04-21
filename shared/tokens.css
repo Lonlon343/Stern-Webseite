@@ -1,0 +1,103 @@
+/* GeoWorks Bau – Design Tokens (shared) */
+:root{
+  --gw-red:#E53824;
+  --gw-red-ink:#C72A18;
+  --gw-black:#242424;
+  --gw-ink:#111111;
+  --gw-white:#FFFFFF;
+  --gw-paper:#F4F2EE;
+  --gw-line:#E6E3DD;
+  --gw-muted:#6B6B68;
+  --gw-grid:#DCD8D0;
+
+  --gw-font-display: "Inter Tight", "Inter", system-ui, -apple-system, Helvetica, Arial, sans-serif;
+  --gw-font-body:    "IBM Plex Sans", system-ui, -apple-system, Helvetica, Arial, sans-serif;
+  --gw-font-mono:    "JetBrains Mono", "IBM Plex Mono", ui-monospace, Menlo, monospace;
+
+  --gw-maxw: 1440px;
+  --gw-gutter: 40px;
+}
+
+*{box-sizing:border-box}
+html,body{margin:0;padding:0;background:var(--gw-white);color:var(--gw-ink);
+  font-family:var(--gw-font-body);font-size:16px;line-height:1.55;-webkit-font-smoothing:antialiased;}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+
+.gw-mono{font-family:var(--gw-font-mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase}
+.gw-eyebrow{font-family:var(--gw-font-mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--gw-muted)}
+.gw-eyebrow .dot{display:inline-block;width:6px;height:6px;background:var(--gw-red);margin-right:10px;vertical-align:1px;border-radius:1px}
+
+.gw-h1{font-family:var(--gw-font-display);font-weight:600;letter-spacing:-.03em;line-height:.96;font-size:clamp(48px,6.4vw,108px);margin:0}
+.gw-h2{font-family:var(--gw-font-display);font-weight:600;letter-spacing:-.025em;line-height:1.02;font-size:clamp(34px,3.8vw,64px);margin:0}
+.gw-h3{font-family:var(--gw-font-display);font-weight:600;letter-spacing:-.01em;line-height:1.1;font-size:clamp(22px,1.6vw,28px);margin:0}
+.gw-lead{font-size:clamp(16px,1.15vw,19px);line-height:1.55;color:var(--gw-ink);max-width:62ch}
+
+/* Buttons */
+.gw-btn{display:inline-flex;align-items:center;gap:12px;font-family:var(--gw-font-body);font-weight:500;
+  font-size:14px;letter-spacing:.02em;padding:14px 20px;border:1px solid var(--gw-ink);
+  background:var(--gw-ink);color:var(--gw-white);border-radius:2px;cursor:pointer;
+  position:relative;overflow:hidden;isolation:isolate}
+.gw-btn::before{content:"";position:absolute;inset:0;background:var(--gw-red);
+  transform:translateX(-101%);transition:transform .35s cubic-bezier(.6,.05,.2,1);z-index:-1}
+.gw-btn:hover::before{transform:translateX(0)}
+.gw-btn:hover{background:transparent !important;border-color:var(--gw-red)}
+
+.gw-btn--ghost{background:transparent;color:var(--gw-ink)}
+.gw-btn--ghost::before{background:var(--gw-ink)}
+.gw-btn--ghost:hover{color:#fff;border-color:var(--gw-ink)}
+
+.gw-btn--red{background:var(--gw-red);border-color:var(--gw-red);color:#fff}
+.gw-btn--red::before{background:var(--gw-red-ink)}
+.gw-btn--red:hover{background:transparent !important;border-color:var(--gw-red-ink)}
+
+.gw-btn--light{background:#fff;color:var(--gw-ink);border-color:#fff}
+.gw-btn--light::before{background:var(--gw-red)}
+.gw-btn--light:hover{color:#fff;border-color:var(--gw-red)}
+
+.gw-btn .arr{display:inline-block;transition:transform .3s cubic-bezier(.2,.7,.3,1)}
+.gw-btn:hover .arr{transform:translateX(6px)}
+
+/* Nav */
+.gw-nav{position:absolute;top:0;left:0;right:0;z-index:20;display:flex;align-items:center;
+  justify-content:space-between;padding:22px var(--gw-gutter);color:#fff;
+  background:linear-gradient(180deg, rgba(0,0,0,0.7) 0%, transparent 100%);
+  padding-bottom:40px;}
+.gw-nav--solid{position:relative;background:#fff;color:var(--gw-ink);border-bottom:1px solid var(--gw-line)}
+.gw-logo{display:flex;align-items:center;gap:10px;font-family:var(--gw-font-display);font-weight:700;letter-spacing:-.01em;font-size:18px}
+.gw-logo .mark{width:22px;height:22px;background:var(--gw-red);position:relative;display:inline-block}
+.gw-logo .mark::after{content:"";position:absolute;inset:6px;background:currentColor;mix-blend-mode:difference}
+.gw-nav ul{display:flex;gap:28px;list-style:none;padding:0;margin:0;font-size:14px;font-weight:500}
+.gw-nav li a{padding:8px 0;position:relative}
+.gw-nav li a.active::after{content:"";position:absolute;left:0;right:0;bottom:-4px;height:2px;background:var(--gw-red)}
+.gw-nav .actions{display:flex;align-items:center;gap:16px;font-size:14px}
+.gw-nav .phone{font-family:var(--gw-font-mono);font-size:12px;letter-spacing:.06em;opacity:.9}
+
+/* Utility */
+.gw-container{max-width:var(--gw-maxw);margin:0 auto;padding:0 var(--gw-gutter)}
+.gw-rule{height:1px;background:var(--gw-line)}
+.gw-grid12{display:grid;grid-template-columns:repeat(12,1fr);gap:24px}
+
+/* Placeholder image */
+.gw-ph{
+  background:
+    linear-gradient(135deg,transparent 48%, rgba(0,0,0,.06) 49%, rgba(0,0,0,.06) 51%, transparent 52%) 0 0/14px 14px,
+    #d7d3cb;
+  position:relative;overflow:hidden;color:#fff
+}
+.gw-ph .gw-ph-cap{position:absolute;left:14px;bottom:12px;font-family:var(--gw-font-mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#2a2a2a;background:#fff;padding:4px 8px}
+.gw-ph .gw-ph-idx{position:absolute;right:14px;top:12px;font-family:var(--gw-font-mono);font-size:11px;color:#2a2a2a;background:#fff;padding:4px 8px}
+
+/* Hero video stand-in */
+.gw-hero-video{position:absolute;inset:0;overflow:hidden;background:#1a1a1a}
+.gw-hero-video::before{content:"";position:absolute;inset:0;
+  background: radial-gradient(140% 80% at 30% 30%,rgba(255,255,255,.12),transparent 60%);
+}
+.gw-hero-video::after{content:"";position:absolute;inset:0;
+  background:linear-gradient(180deg, rgba(0,0,0,.15) 0%, rgba(0,0,0,.2) 40%, rgba(0,0,0,.75) 100%)}
+.gw-hero-video .videochrome{position:absolute;left:24px;top:24px;display:flex;gap:10px;align-items:center;
+  font-family:var(--gw-font-mono);font-size:11px;letter-spacing:.14em;color:#fff;text-transform:uppercase;z-index:2}
+.gw-hero-video .videochrome .rec{display:inline-flex;align-items:center;gap:8px}
+.gw-hero-video .videochrome .rec::before{content:"";width:8px;height:8px;background:var(--gw-red);border-radius:50%;animation:gw-blink 1.3s infinite}
+@keyframes gw-blink{50%{opacity:.3}}
+.gw-hero-video .timecode{position:absolute;right:24px;top:24px;font-family:var(--gw-font-mono);font-size:11px;letter-spacing:.1em;color:#fff;z-index:2}

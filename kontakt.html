@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<title>GeoWorks Bau – Kontakt</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="shared/tokens.css">
+<link rel="stylesheet" href="shared/global.css">
+<style>
+.contact-grid { display: grid; grid-template-columns: 1fr 1.3fr; gap: 80px; padding: 120px 0; align-items: start; }
+
+.contact-info { display: flex; flex-direction: column; gap: 48px; }
+.info-block h4 { font-family: var(--gw-font-mono); font-size: 13px; color: var(--gw-muted); letter-spacing: .1em; text-transform: uppercase; margin: 0 0 16px; }
+.info-block p { font-size: 20px; line-height: 1.55; font-weight: 500; margin: 0; color: var(--gw-ink); }
+.info-block p.gw-mono { font-size: 14px; font-weight: 400; letter-spacing: .08em; }
+
+.contact-form { background: var(--gw-paper); padding: 48px; border: 1px solid var(--gw-line); }
+.contact-form h3 { font-family: var(--gw-font-display); font-size: 28px; line-height: 1.1; margin: 0 0 32px; font-weight: 600; letter-spacing: -0.01em; }
+.form-group { margin-bottom: 24px; }
+.form-group label { display: block; font-family: var(--gw-font-mono); font-size: 12px; color: var(--gw-muted); letter-spacing: .1em; text-transform: uppercase; margin-bottom: 10px; }
+.form-group input, .form-group select, .form-group textarea { width: 100%; border: 1px solid var(--gw-line); background: #fff; padding: 16px; font-family: var(--gw-font-body); font-size: 16px; color: var(--gw-ink); outline: none; transition: .2s; }
+.form-group input:focus, .form-group select:focus, .form-group textarea:focus { border-color: var(--gw-ink); box-shadow: 0 0 0 1px var(--gw-ink); }
+.form-group textarea { min-height: 140px; resize: vertical; }
+
+.checkbox-group { display: flex; gap: 12px; align-items: flex-start; margin-bottom: 32px; }
+.checkbox-group input { margin-top: 4px; }
+.checkbox-group label { font-size: 14px; color: var(--gw-muted); line-height: 1.5; cursor: pointer; }
+
+/* Map placeholder */
+.map-placeholder { height: 480px; background: var(--gw-line); position: relative; display: flex; align-items: center; justify-content: center; }
+.map-placeholder::before { content: ""; position: absolute; inset: 0; background: linear-gradient(135deg, transparent 48%, rgba(0,0,0,.06) 49%, rgba(0,0,0,.06) 51%, transparent 52%) 0 0/14px 14px; }
+.map-placeholder .tag { position: relative; z-index: 2; background: #fff; padding: 12px 20px; font-family: var(--gw-font-mono); font-size: 13px; letter-spacing: .1em; text-transform: uppercase; color: var(--gw-ink); box-shadow: 0 4px 12px rgba(0,0,0,.1); border: 1px solid var(--gw-line); }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="gw-nav gw-nav--solid">
+  <a class="gw-logo" href="index.html"><span class="mark"></span> GeoWorks<span style="opacity:.6;font-weight:400">·Bau</span></a>
+  <ul>
+    <li><a href="index.html">Startseite</a></li>
+    <li><a href="leistungen.html">Leistungen</a></li>
+    <li><a href="referenzen.html">Referenzen</a></li>
+    <li><a href="ueber-uns.html">Über uns</a></li>
+    <li><a href="karriere.html">Karriere</a></li>
+    <li><a href="kontakt.html" class="active">Kontakt</a></li>
+  </ul>
+  <div class="actions">
+    <span class="phone">T +49 176 301 89 229</span>
+    <a href="kontakt.html" class="gw-btn gw-btn--red">Projekt anfragen <span class="arr">→</span></a>
+  </div>
+</nav>
+
+<!-- HEADER -->
+<header class="page-header">
+  <div class="gw-container">
+    <div class="grid" style="grid-template-columns: 1fr 1fr;">
+      <div>
+        <div class="gw-eyebrow eyebrow"><span class="dot"></span>Kontakt & Anfahrt</div>
+        <h1>Sprechen wir<br><u>mit­ein­ander.</u></h1>
+      </div>
+      <div>
+        <p>Gute Projekte beginnen mit einem klaren Gespräch. Egal ob Sie eine konkrete Anfrage haben oder sich über Möglichkeiten austauschen möchten – wir sind für Sie da.</p>
+      </div>
+    </div>
+  </div>
+</header>
+
+<section>
+  <div class="gw-container">
+    <div class="contact-grid">
+      
+      <!-- Contact Info -->
+      <div class="contact-info">
+        <div class="info-block">
+          <h4>Standort</h4>
+          <p>GeoWorks Bau GmbH<br>Musterstraße 12<br>00000 Musterstadt</p>
+        </div>
+        <div class="info-block">
+          <h4>Telefon &amp; Erreichbarkeit</h4>
+          <p class="gw-mono">+49 176 301 89 229</p>
+          <p style="font-size:15px; color:var(--gw-muted); margin-top:8px;">Mo–Fr 08:00–18:00 Uhr</p>
+        </div>
+        <div class="info-block">
+          <h4>E-Mail</h4>
+          <p class="gw-mono">stern@geoworksbau.de</p>
+        </div>
+      </div>
+
+      <!-- Contact Form -->
+      <div class="contact-form">
+        <h3>Projekt anfragen</h3>
+        <form action="#" method="post">
+          <div style="display:grid; grid-template-columns:1fr 1fr; gap:20px;">
+            <div class="form-group">
+              <label for="fname">Vorname</label>
+              <input type="text" id="fname" name="fname" required>
+            </div>
+            <div class="form-group">
+              <label for="lname">Nachname</label>
+              <input type="text" id="lname" name="lname" required>
+            </div>
+          </div>
+          
+          <div class="form-group">
+            <label for="email">E-Mail</label>
+            <input type="email" id="email" name="email" required>
+          </div>
+          
+          <div class="form-group">
+            <label for="subject">Thema / Gewerk</label>
+            <select id="subject" name="subject">
+              <option value="hochbau">Hochbau</option>
+              <option value="tiefbau">Tiefbau</option>
+              <option value="sanierung">Sanierung &amp; Umbau</option>
+              <option value="sf">Schlüsselfertigbau</option>
+              <option value="sonstiges">Sonstiges</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="message">Nachricht / Projektbeschreibung</label>
+            <textarea id="message" name="message" required></textarea>
+          </div>
+
+          <div class="checkbox-group">
+            <input type="checkbox" id="dsgvo" name="dsgvo" required>
+            <label for="dsgvo">Ich stimme zu, dass meine Angaben aus dem Kontaktformular zur Beantwortung meiner Anfrage erhoben und verarbeitet werden. Die Daten werden nach abgeschlossener Bearbeitung Ihrer Anfrage gelöscht. Hinweis: Sie können Ihre Einwilligung jederzeit für die Zukunft per E-Mail an stern@geoworksbau.de widerrufen.</label>
+          </div>
+
+          <button type="submit" class="gw-btn gw-btn--red" style="width:100%; justify-content:center;">
+            Anfrage senden <span class="arr">→</span>
+          </button>
+        </form>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- MAP PLACEHOLDER -->
+<div class="map-placeholder">
+  <div class="tag">Interaktive Karte (Google Maps / OpenStreetMap)</div>
+</div>
+
+<!-- FOOTER -->
+<footer class="a-foot">
+  <div class="gw-container">
+    <div class="grid">
+      <div>
+        <a class="gw-logo" href="index.html" style="color:#fff"><span class="mark"></span> GeoWorks·Bau</a>
+        <p style="margin-top:20px;max-width:36ch;color:rgba(255,255,255,.6)">Generalunternehmer für Hoch- und Tiefbau. Sitz in Musterstadt, deutschlandweit im Einsatz.</p>
+      </div>
+      <div><h4>Leistungen</h4><ul><li><a href="#">Hochbau</a></li><li><a href="#">Tiefbau</a></li><li><a href="#">Schlüsselfertig</a></li><li><a href="#">Sanierung</a></li><li><a href="#">Projektsteuerung</a></li></ul></div>
+      <div><h4>Unternehmen</h4><ul><li><a href="ueber-uns.html">Über uns</a></li><li><a href="referenzen.html">Referenzen</a></li><li><a href="karriere.html">Karriere</a></li><li><a href="kontakt.html">Kontakt</a></li></ul></div>
+      <div><h4>Kontakt</h4><ul><li>+49 176 301 89 229</li><li>stern@geoworksbau.de</li><li>Mo–Fr 08:00–18:00</li></ul></div>
+    </div>
+    <div class="legal">
+      <span>© 2026 GeoWorks Bau GmbH</span>
+      <span><a href="#">Impressum</a> · <a href="#">Datenschutz</a> · <a href="#">AGB</a></span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

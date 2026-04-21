@@ -1,0 +1,823 @@
+<!doctype html>
+<html lang="de">
+
+<head>
+    <meta charset="utf-8">
+    <title>GeoWorks Bau – Startseite · Variante A</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="shared/tokens.css">
+    <link rel="stylesheet" href="shared/global.css">
+    <style>
+        /* Variante A – Konservativ: Weiß dominant, Rot als sparsame Signalfarbe */
+        .a-hero {
+            position: relative;
+            height: 92vh;
+            min-height: 640px;
+            color: #fff;
+            overflow: hidden
+        }
+
+        .a-hero .inner {
+            position: relative;
+            z-index: 3;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            padding: 0 var(--gw-gutter) 64px
+        }
+
+        .a-hero .eye {
+            color: #fff;
+            opacity: .9;
+            margin-bottom: 18px
+        }
+
+        .a-hero h1 {
+            max-width: 18ch;
+            color: #fff
+        }
+
+        .a-hero .sub {
+            margin-top: 20px;
+            max-width: 46ch;
+            font-size: 18px;
+            color: rgba(255, 255, 255, .85)
+        }
+
+        .a-hero .cta-row {
+            margin-top: 36px;
+            display: flex;
+            gap: 14px;
+            flex-wrap: wrap
+        }
+
+        .a-hero .scroll {
+            position: absolute;
+            left: var(--gw-gutter);
+            bottom: 18px;
+            font-family: var(--gw-font-mono);
+            font-size: 11px;
+            letter-spacing: .14em;
+            color: rgba(255, 255, 255, .7);
+            text-transform: uppercase;
+            z-index: 3
+        }
+
+        .a-hero .indexrow {
+            position: absolute;
+            right: var(--gw-gutter);
+            bottom: 18px;
+            display: flex;
+            gap: 20px;
+            font-family: var(--gw-font-mono);
+            font-size: 11px;
+            color: rgba(255, 255, 255, .7);
+            letter-spacing: .14em;
+            text-transform: uppercase;
+            z-index: 3
+        }
+
+        /* Stats strip */
+        .a-stats {
+            background: #fff;
+            border-bottom: 1px solid var(--gw-line)
+        }
+
+        .a-stats .row {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            border-left: 1px solid var(--gw-line)
+        }
+
+        .a-stats .cell {
+            padding: 40px var(--gw-gutter);
+            border-right: 1px solid var(--gw-line)
+        }
+
+        .a-stats .num {
+            font-family: var(--gw-font-display);
+            font-weight: 600;
+            font-size: 54px;
+            letter-spacing: -.02em;
+            line-height: 1
+        }
+
+        .a-stats .num sup {
+            font-size: 22px;
+            color: var(--gw-red);
+            font-weight: 500;
+            vertical-align: super;
+            margin-left: 2px
+        }
+
+        .a-stats .lbl {
+            margin-top: 10px;
+            color: var(--gw-muted);
+            font-size: 13px;
+            max-width: 22ch
+        }
+
+        /* Intro / Profil */
+        .a-intro {
+            padding: 120px 0 80px;
+            background: #fff
+        }
+
+        .a-intro .grid {
+            display: grid;
+            grid-template-columns: 1fr 1.4fr;
+            gap: 80px;
+            align-items: start
+        }
+
+        .a-intro .eye {
+            margin-bottom: 24px
+        }
+
+        .a-intro h2 {
+            max-width: 16ch
+        }
+
+        .a-intro p {
+            font-size: 20px;
+            line-height: 1.55;
+            color: var(--gw-ink);
+            max-width: 56ch
+        }
+
+        .a-intro p+p {
+            margin-top: 18px
+        }
+
+        .a-intro .sig {
+            margin-top: 36px;
+            display: flex;
+            gap: 24px;
+            align-items: center;
+            color: var(--gw-muted);
+            font-size: 13px
+        }
+
+        .a-intro .sig .name {
+            color: var(--gw-ink);
+            font-weight: 600;
+            font-size: 15px
+        }
+
+        /* Leistungen – zweispaltig, Index-Liste */
+        .a-services {
+            background: var(--gw-ink);
+            color: #fff;
+            padding: 120px 0
+        }
+
+        .a-services header {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: end;
+            margin-bottom: 72px
+        }
+
+        .a-services h2 {
+            color: #fff;
+            max-width: 14ch
+        }
+
+        .a-services .eye {
+            color: rgba(255, 255, 255, .7)
+        }
+
+        .a-services .lead {
+            color: rgba(255, 255, 255, .75);
+            font-size: 18px;
+            max-width: 48ch
+        }
+
+        .a-services .list {
+            border-top: 1px solid rgba(255, 255, 255, .15)
+        }
+
+        .a-services .item {
+            display: grid;
+            grid-template-columns: 80px 1.3fr 1.4fr 140px;
+            gap: 40px;
+            padding: 32px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, .15);
+            align-items: center;
+            transition: .2s;
+            cursor: pointer
+        }
+
+        .a-services .item:hover {
+            background: rgba(255, 255, 255, .03);
+            padding-left: 12px
+        }
+
+        .a-services .item .no {
+            font-family: var(--gw-font-mono);
+            font-size: 12px;
+            color: rgba(255, 255, 255, .6);
+            letter-spacing: .1em
+        }
+
+        .a-services .item h3 {
+            font-family: var(--gw-font-display);
+            font-weight: 500;
+            font-size: 28px;
+            letter-spacing: -.01em
+        }
+
+        .a-services .item p {
+            color: rgba(255, 255, 255, .7);
+            font-size: 15px;
+            max-width: 42ch;
+            margin: 0
+        }
+
+        .a-services .item .more {
+            font-family: var(--gw-font-mono);
+            font-size: 11px;
+            letter-spacing: .14em;
+            text-transform: uppercase;
+            color: var(--gw-red);
+            text-align: right
+        }
+
+        /* Referenzen */
+        .a-projects {
+            padding: 120px 0;
+            background: #fff
+        }
+
+        .a-projects header {
+            display: flex;
+            justify-content: space-between;
+            align-items: end;
+            margin-bottom: 56px;
+            gap: 40px;
+            flex-wrap: wrap
+        }
+
+        .a-projects header h2 {
+            max-width: 18ch
+        }
+
+        .a-projects .grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            grid-template-rows: auto auto;
+            gap: 16px
+        }
+
+        .a-projects .card {
+            position: relative;
+            background: #ddd
+        }
+
+        .a-projects .card.big {
+            grid-row: span 2;
+            aspect-ratio: 4/5
+        }
+
+        .a-projects .card:not(.big) {
+            aspect-ratio: 4/3
+        }
+
+        .a-projects .card .meta {
+            position: absolute;
+            left: 20px;
+            bottom: 20px;
+            color: #fff;
+            z-index: 2
+        }
+
+        .a-projects .card .meta .k {
+            font-family: var(--gw-font-mono);
+            font-size: 11px;
+            letter-spacing: .14em;
+            text-transform: uppercase;
+            opacity: .85
+        }
+
+        .a-projects .card .meta .t {
+            font-family: var(--gw-font-display);
+            font-weight: 500;
+            font-size: 22px;
+            letter-spacing: -.01em;
+            margin-top: 6px
+        }
+
+        .a-projects .card .shade {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(180deg, transparent 50%, rgba(0, 0, 0, .65) 100%);
+            z-index: 1
+        }
+
+        /* Warum wir */
+        .a-why {
+            padding: 120px 0;
+            background: var(--gw-paper)
+        }
+
+        .a-why .grid {
+            display: grid;
+            grid-template-columns: 1fr 1.3fr;
+            gap: 80px
+        }
+
+        .a-why h2 {
+            max-width: 14ch
+        }
+
+        .a-why .pillars {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0;
+            border-top: 1px solid var(--gw-line);
+            border-left: 1px solid var(--gw-line)
+        }
+
+        .a-why .pillar {
+            padding: 32px;
+            border-right: 1px solid var(--gw-line);
+            border-bottom: 1px solid var(--gw-line)
+        }
+
+        .a-why .pillar .no {
+            font-family: var(--gw-font-mono);
+            font-size: 11px;
+            color: var(--gw-red);
+            letter-spacing: .14em
+        }
+
+        .a-why .pillar h3 {
+            margin: 16px 0 10px;
+            font-family: var(--gw-font-display);
+            font-weight: 600;
+            font-size: 22px;
+            letter-spacing: -.01em
+        }
+
+        .a-why .pillar p {
+            color: var(--gw-muted);
+            font-size: 15px;
+            line-height: 1.55;
+            margin: 0
+        }
+
+        /* ===== Scroll-Effekte & Microanimationen ===== */
+        /* Scroll-Progress oben (dezent, rot) */
+        .a-progress{position:fixed;top:0;left:0;right:0;height:2px;background:transparent;z-index:40;pointer-events:none}
+        .a-progress .bar{height:100%;width:0;background:var(--gw-red);transition:width .08s linear}
+
+        /* Hero Parallax */
+        .a-hero .inner{will-change:transform}
+        .a-hero .gw-hero-video{will-change:transform}
+
+        /* Sticky-Scroll Leistungen: Kapitelblock links bleibt stehen, Items rechts scrollen */
+        .a-services .gw-container{padding:0 var(--gw-gutter)}
+        .a-services header{display:none}
+        .a-services .sticky-wrap{display:grid;grid-template-columns:1fr 1.5fr;gap:80px;align-items:start}
+        .a-services .sticky-chapter{position:sticky;top:96px;align-self:start;padding:40px 0}
+        .a-services .sticky-chapter .chap-no{font-family:var(--gw-font-mono);font-size:12px;letter-spacing:.18em;color:var(--gw-red);margin-bottom:22px;transition:opacity .3s}
+        .a-services .sticky-chapter h2{color:#fff;margin:0 0 28px;max-width:14ch}
+        .a-services .sticky-chapter .lead{color:rgba(255,255,255,.7);font-size:17px;max-width:42ch;line-height:1.55;margin:0 0 36px}
+        .a-services .sticky-chapter .progress-dots{display:flex;flex-direction:column;gap:14px;margin-top:12px}
+        .a-services .sticky-chapter .pd{display:flex;align-items:center;gap:14px;font-family:var(--gw-font-mono);font-size:11px;letter-spacing:.14em;color:rgba(255,255,255,.45);text-transform:uppercase;transition:color .3s}
+        .a-services .sticky-chapter .pd::before{content:"";width:22px;height:1px;background:rgba(255,255,255,.3);transition:width .4s,background .3s}
+        .a-services .sticky-chapter .pd.active{color:#fff}
+        .a-services .sticky-chapter .pd.active::before{width:42px;background:var(--gw-red)}
+        .a-services .list{border-top:none;padding:24px 0}
+        .a-services .item{grid-template-columns:60px 1fr 110px;padding:40px 0;border-bottom:1px solid rgba(255,255,255,.12);opacity:.35;transform:translateY(14px);transition:opacity .5s,transform .5s,padding .25s,background .25s}
+        .a-services .item.in{opacity:1;transform:none}
+        .a-services .item:first-child{border-top:1px solid rgba(255,255,255,.12)}
+
+        /* Reveal-Utility */
+        .reveal{opacity:0;transform:translateY(18px);transition:opacity .8s cubic-bezier(.2,.7,.3,1),transform .8s cubic-bezier(.2,.7,.3,1)}
+        .reveal.in{opacity:1;transform:none}
+
+        /* Hover-Effekte */
+        .a-projects .card{transition:transform .4s cubic-bezier(.2,.7,.3,1),box-shadow .4s}
+        .a-projects .card::after{content:"";position:absolute;inset:0;border:2px solid transparent;transition:border-color .25s;pointer-events:none;z-index:3}
+        .a-projects .card:hover{transform:translateY(-6px)}
+        .a-projects .card:hover::after{border-color:var(--gw-red)}
+        .a-projects .card:hover .meta .t{color:#fff}
+
+        .a-why .pillar{transition:background .25s;position:relative}
+        .a-why .pillar::before{content:"";position:absolute;left:0;top:0;bottom:0;width:2px;background:var(--gw-red);transform:scaleY(0);transform-origin:top;transition:transform .35s cubic-bezier(.2,.7,.3,1)}
+        .a-why .pillar:hover{background:#fff}
+        .a-why .pillar:hover::before{transform:scaleY(1)}
+
+        /* Stats Cascade */
+        .a-stats .cell{opacity:0;transform:translateY(10px);transition:opacity .7s,transform .7s}
+        .a-stats .cell.in{opacity:1;transform:none}
+        .a-stats .cell:nth-child(2){transition-delay:.08s}
+        .a-stats .cell:nth-child(3){transition-delay:.16s}
+        .a-stats .cell:nth-child(4){transition-delay:.24s}
+
+        @media (prefers-reduced-motion: reduce){
+            .a-progress{display:none}
+            .reveal, .a-stats .cell, .a-services .item{opacity:1 !important;transform:none !important;transition:none !important}
+            .a-hero .inner, .a-hero .gw-hero-video{transform:none !important}
+            .a-services .sticky-chapter{position:static}
+        }
+    </style>
+</head>
+
+<body data-screen-label="Variant A — Home (konservativ)">
+    <div class="a-progress"><div class="bar"></div></div>
+
+    <!-- NAV (overlaid on hero) -->
+    <nav class="gw-nav">
+        <a class="gw-logo" href="#"><span class="mark"></span> GeoWorks<span
+                style="opacity:.6;font-weight:400">·Bau</span></a>
+        <ul>
+            <li><a href="index.html" class="active">Startseite</a></li>
+            <li><a href="leistungen.html">Leistungen</a></li>
+            <li><a href="referenzen.html">Referenzen</a></li>
+            <li><a href="ueber-uns.html">Über uns</a></li>
+            <li><a href="karriere.html">Karriere</a></li>
+            <li><a href="kontakt.html">Kontakt</a></li>
+        </ul>
+        <div class="actions">
+            <span class="phone">T +49 176 301 89 229</span>
+            <a href="#" class="gw-btn gw-btn--red">Projekt anfragen <span class="arr">→</span></a>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <section class="a-hero" data-screen-label="Hero">
+        <div class="gw-hero-video">
+            <video src="Construction_Site_Drone_Video_Generation.mp4" autoplay loop muted playsinline
+                style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover;"></video>
+            <div class="videochrome"><span class="rec">REC</span><span>· HERO REEL / 02</span><span>· BAUSTELLE
+                    BERLIN</span></div>
+            <div class="timecode">00:00:14:12</div>
+        </div>
+        <div class="inner">
+            <div class="gw-eyebrow eye"><span class="dot"></span>Generalunternehmer · Hochbau &amp; Tiefbau</div>
+            <h1 class="gw-h1">Wir bauen, was<br>morgen Bestand hat.</h1>
+            <p class="sub">GeoWorks Bau realisiert anspruchsvolle Projekte im Hoch- und Tiefbau – deutschlandweit,
+                termintreu, aus einer Hand. Vom ersten Spatenstich bis zur Übergabe.</p>
+            <div class="cta-row">
+                <a href="#" class="gw-btn gw-btn--red">Projekt anfragen <span class="arr">→</span></a>
+                <a href="#" class="gw-btn gw-btn--light">Leistungen ansehen <span class="arr">→</span></a>
+            </div>
+        </div>
+        <div class="scroll">↓ Scroll · weiter</div>
+        <div class="indexrow"><span>01 / Hero</span><span>DE</span></div>
+    </section>
+
+    <!-- STATS -->
+    <section class="a-stats">
+        <div class="row">
+            <div class="cell reveal">
+                <div class="num">140<sup>+</sup></div>
+                <div class="lbl">Realisierte Projekte seit Gründung</div>
+            </div>
+            <div class="cell">
+                <div class="num">35</div>
+                <div class="lbl">Qualifizierte Mitarbeiter im Stammteam</div>
+            </div>
+            <div class="cell">
+                <div class="num">16</div>
+                <div class="lbl">Bundesländer im Einsatzgebiet</div>
+            </div>
+            <div class="cell">
+                <div class="num">0,0</div>
+                <div class="lbl">Arbeitsunfälle mit Ausfall (letzte 12 Monate)</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- INTRO -->
+    <section class="a-intro" data-screen-label="Intro">
+        <div class="gw-container">
+            <div class="grid">
+                <div>
+                    <div class="gw-eyebrow eye"><span class="dot"></span>Profil</div>
+                    <h2 class="gw-h2">Ein Partner für das gesamte Bauvorhaben.</h2>
+                </div>
+                <div>
+                    <p>Als Generalunternehmer verantworten wir Ihr Projekt über alle Gewerke hinweg – von der Planung
+                        über die Ausschreibung bis zur schlüsselfertigen Übergabe. Öffentliche Auftraggeber, Investoren
+                        und private Bauherren vertrauen auf unsere Erfahrung in Hochbau und Tiefbau.</p>
+                    <p>Unser Netzwerk aus langjährigen Fachpartnern, eigenen Polieren und qualifizierten Bauleitern
+                        sichert Qualität, Termine und Kostenrahmen. Kurze Wege, klare Verantwortung, ein verlässlicher
+                        Ansprechpartner.</p>
+                    <div class="sig">
+                        <div style="width:64px;height:64px;background:#e6e3dd;flex-shrink:0"></div>
+                        <div>
+                            <div class="name">Alessandro Stern</div>
+                            <div>Geschäftsführer · GeoWorks Bau GmbH</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- LEISTUNGEN -->
+    <section class="a-services" data-screen-label="Leistungen">
+        <div class="gw-container">
+            <div class="sticky-wrap">
+                <aside class="sticky-chapter">
+                    <div class="chap-no" id="a-chap-no">§ 02 · Leistungen / <span id="a-chap-n">01</span> von 06</div>
+                    <div class="gw-eyebrow" style="color:rgba(255,255,255,.7);margin-bottom:18px"><span class="dot"></span>Leistungen</div>
+                    <h2 class="gw-h2">Was wir für Sie umsetzen.</h2>
+                    <p class="lead">Sechs Kernbereiche, ein durchgängiger Qualitätsanspruch. Scrollen Sie durch, oder springen Sie direkt zu einem Bereich.</p>
+                    <div class="progress-dots">
+                        <a href="#svc-1" class="pd active">01 · Hochbau</a>
+                        <a href="#svc-2" class="pd">02 · Tiefbau</a>
+                        <a href="#svc-3" class="pd">03 · Schlüsselfertig</a>
+                        <a href="#svc-4" class="pd">04 · Sanierung</a>
+                        <a href="#svc-5" class="pd">05 · Projektsteuerung</a>
+                        <a href="#svc-6" class="pd">06 · Netzwerk</a>
+                    </div>
+                </aside>
+                <div class="list">
+                    <div class="item" id="svc-1" data-idx="1">
+                        <div class="no">01</div>
+                        <div><h3>Hochbau</h3>
+                        <p>Wohn-, Gewerbe- und Industriebau. Schlüsselfertig, nachhaltig, energieeffizient – vom Rohbau bis
+                            zum Innenausbau.</p></div>
+                        <div class="more">Mehr →</div>
+                    </div>
+                    <div class="item" id="svc-2" data-idx="2">
+                        <div class="no">02</div>
+                        <div><h3>Tiefbau</h3>
+                        <p>Erd-, Kanal- und Straßenbau. Spezialtiefbau für anspruchsvolle Gründungen, Baugruben und
+                            Infrastrukturprojekte.</p></div>
+                        <div class="more">Mehr →</div>
+                    </div>
+                    <div class="item" id="svc-3" data-idx="3">
+                        <div class="no">03</div>
+                        <div><h3>Schlüsselfertigbau</h3>
+                        <p>Gesamtverantwortung aus einer Hand – ein Ansprechpartner, ein Festpreis, ein Termin für die
+                            Übergabe.</p></div>
+                        <div class="more">Mehr →</div>
+                    </div>
+                    <div class="item" id="svc-4" data-idx="4">
+                        <div class="no">04</div>
+                        <div><h3>Sanierung &amp; Umbau</h3>
+                        <p>Denkmalgeschützte Substanz, Bestand im Betrieb, energetische Modernisierung – planbar und ohne
+                            Überraschungen.</p></div>
+                        <div class="more">Mehr →</div>
+                    </div>
+                    <div class="item" id="svc-5" data-idx="5">
+                        <div class="no">05</div>
+                        <div><h3>Projektsteuerung</h3>
+                        <p>Bauleitung, Ausschreibung, Vergabe, Controlling. Für Bauherren, die ihr Vorhaben in erfahrene
+                            Hände geben wollen.</p></div>
+                        <div class="more">Mehr →</div>
+                    </div>
+                    <div class="item" id="svc-6" data-idx="6">
+                        <div class="no">06</div>
+                        <div><h3>Netzwerk &amp; Nachunternehmer</h3>
+                        <p>Langjährig eingespielte Fachpartner – Rohbau, TGA, Ausbau, Außenanlagen. Qualität durch
+                            Kontinuität.</p></div>
+                        <div class="more">Mehr →</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- REFERENZEN -->
+    <section class="a-projects" data-screen-label="Referenzen">
+        <div class="gw-container">
+            <header>
+                <div>
+                    <div class="gw-eyebrow"><span class="dot"></span>Referenzen / Auswahl 2024—2026</div>
+                    <h2 class="gw-h2" style="margin-top:14px">Projekte, die für sich sprechen.</h2>
+                </div>
+                <a href="#" class="gw-btn gw-btn--ghost">Alle Referenzen <span class="arr">→</span></a>
+            </header>
+            <div class="grid">
+                <div class="card big gw-ph">
+                    <span class="gw-ph-cap">Hochbau · Gewerbe</span>
+                    <span class="gw-ph-idx">P–001</span>
+                    <div class="shade"></div>
+                    <div class="meta">
+                        <div class="k">Bürokomplex Rheinufer · Düsseldorf</div>
+                        <div class="t">Neubau, 14.800 m² BGF</div>
+                    </div>
+                </div>
+                <div class="card gw-ph">
+                    <span class="gw-ph-cap">Tiefbau · Infrastruktur</span>
+                    <span class="gw-ph-idx">P–014</span>
+                    <div class="shade"></div>
+                    <div class="meta">
+                        <div class="k">Kanalsanierung Nord</div>
+                        <div class="t">Leipzig · 3,2 km</div>
+                    </div>
+                </div>
+                <div class="card gw-ph">
+                    <span class="gw-ph-cap">Hochbau · Wohnen</span>
+                    <span class="gw-ph-idx">P–022</span>
+                    <div class="shade"></div>
+                    <div class="meta">
+                        <div class="k">Quartier Hafenbogen</div>
+                        <div class="t">Hamburg · 86 WE</div>
+                    </div>
+                </div>
+                <div class="card gw-ph">
+                    <span class="gw-ph-cap">Sanierung</span>
+                    <span class="gw-ph-idx">P–031</span>
+                    <div class="shade"></div>
+                    <div class="meta">
+                        <div class="k">Verwaltungsgebäude Bismarck</div>
+                        <div class="t">Bonn · energ. Vollsanierung</div>
+                    </div>
+                </div>
+                <div class="card gw-ph">
+                    <span class="gw-ph-cap">Spezialtiefbau</span>
+                    <span class="gw-ph-idx">P–044</span>
+                    <div class="shade"></div>
+                    <div class="meta">
+                        <div class="k">Baugrube A66</div>
+                        <div class="t">Frankfurt · –18 m</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- WARUM WIR -->
+    <section class="a-why">
+        <div class="gw-container">
+            <div class="grid">
+                <div>
+                    <div class="gw-eyebrow eye"><span class="dot"></span>Warum GeoWorks</div>
+                    <h2 class="gw-h2" style="margin-top:14px">Verlässlich, messbar, persönlich.</h2>
+                </div>
+                <div class="pillars">
+                    <div class="pillar">
+                        <div class="no">01 — Qualität</div>
+                        <h3>Eigene Bauleitung</h3>
+                        <p>Kein durchgereichtes Projekt. Jede Baustelle hat einen verantwortlichen Bauleiter aus unserem
+                            Haus.</p>
+                    </div>
+                    <div class="pillar">
+                        <div class="no">02 — Termin</div>
+                        <h3>Termintreu, nachweisbar</h3>
+                        <p>Transparentes Reporting, Meilensteine nach AHO, Vertragsstrafen im Festpreis abgesichert.</p>
+                    </div>
+                    <div class="pillar">
+                        <div class="no">03 — Kosten</div>
+                        <h3>Festpreis-Garantie</h3>
+                        <p>Kalkulation mit Reserve statt Nachtragsüberraschung. Wir stehen zu unseren Zahlen.</p>
+                    </div>
+                    <div class="pillar">
+                        <div class="no">04 — Netzwerk</div>
+                        <h3>Partner seit Jahren</h3>
+                        <p>Wiederkehrende Fachbetriebe – keine Losverfahren, keine Unbekannten auf der Baustelle.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="a-cta" data-screen-label="CTA">
+        <div class="gw-container">
+            <div class="inner">
+                <div>
+                    <div class="gw-eyebrow eye" style="color:rgba(255,255,255,.7)"><span class="dot"></span>Projekt
+                        planen</div>
+                    <h2 class="gw-h2" style="margin-top:14px">Sie haben ein Vorhaben.<br>Wir haben das Team dafür.</h2>
+                    <p>Rufen Sie uns an oder schicken Sie uns Ihre Unterlagen – wir melden uns innerhalb eines Werktages
+                        mit einer ersten Einschätzung zurück.</p>
+                    <div class="row">
+                        <a href="#" class="gw-btn gw-btn--red">Projekt anfragen <span class="arr">→</span></a>
+                        <a href="#" class="gw-btn gw-btn--ghost"
+                            style="color:#fff;border-color:rgba(255,255,255,.4)">+49 176 301 89 229</a>
+                    </div>
+                </div>
+                <div
+                    style="font-family:var(--gw-font-mono);font-size:12px;color:rgba(255,255,255,.7);line-height:1.8;letter-spacing:.05em">
+                    GEOWORKS BAU GMBH<br>
+                    MUSTERSTRASSE 12<br>
+                    00000 MUSTERSTADT<br>
+                    STERN@GEOWORKSBAU.DE
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="a-foot">
+        <div class="gw-container">
+            <div class="grid">
+                <div>
+                    <a class="gw-logo" href="#" style="color:#fff"><span class="mark"></span> GeoWorks·Bau</a>
+                    <p style="margin-top:20px;max-width:36ch;color:rgba(255,255,255,.6)">Generalunternehmer für Hoch-
+                        und Tiefbau. Sitz in Musterstadt, deutschlandweit im Einsatz.</p>
+                </div>
+                <div>
+                    <h4>Leistungen</h4>
+                    <ul>
+                        <li>Hochbau</li>
+                        <li>Tiefbau</li>
+                        <li>Schlüsselfertig</li>
+                        <li>Sanierung</li>
+                        <li>Projektsteuerung</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Unternehmen</h4>
+                    <ul>
+                        <li>Über uns</li>
+                        <li>Referenzen</li>
+                        <li>Karriere</li>
+                        <li>Kontakt</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Kontakt</h4>
+                    <ul>
+                        <li>+49 176 301 89 229</li>
+                        <li>stern@geoworksbau.de</li>
+                        <li>Mo–Fr 08:00–18:00</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="legal">
+                <span>© 2026 GeoWorks Bau GmbH</span>
+                <span>Impressum · Datenschutz · AGB</span>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+    (function(){
+      var reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+      if(reduce) return;
+
+      // Scroll-Progress
+      var bar = document.querySelector('.a-progress .bar');
+      // Hero parallax
+      var heroInner = document.querySelector('.a-hero .inner');
+      var heroVid = document.querySelector('.a-hero .gw-hero-video');
+      var heroSec = document.querySelector('.a-hero');
+
+      function onScroll(){
+        var y = window.scrollY || 0;
+        var h = document.documentElement.scrollHeight - window.innerHeight;
+        if(bar) bar.style.width = Math.max(0, Math.min(1, y / h)) * 100 + '%';
+        if(heroSec){
+          var rect = heroSec.getBoundingClientRect();
+          if(rect.bottom > 0){
+            // Text schneller raus (1.4x), Video langsamer (0.4x)
+            if(heroInner) heroInner.style.transform = 'translate3d(0,' + (-y * 0.45) + 'px,0)';
+            if(heroVid)   heroVid.style.transform   = 'translate3d(0,' + ( y * 0.15) + 'px,0)';
+          }
+        }
+      }
+      window.addEventListener('scroll', onScroll, {passive:true});
+      onScroll();
+
+      // Reveal-Observer für items, stats, reveal-Utility
+      var io = new IntersectionObserver(function(entries){
+        entries.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+      }, {threshold:.15, rootMargin:'0px 0px -60px 0px'});
+      document.querySelectorAll('.a-services .item, .a-stats .cell, .reveal').forEach(function(n){ io.observe(n); });
+
+      // Sticky-Chapter: aktives Item tracken
+      var items = document.querySelectorAll('.a-services .item');
+      var dots  = document.querySelectorAll('.a-services .pd');
+      var nLbl  = document.getElementById('a-chap-n');
+      var actIO = new IntersectionObserver(function(entries){
+        entries.forEach(function(e){
+          if(e.isIntersecting){
+            var idx = parseInt(e.target.dataset.idx, 10);
+            dots.forEach(function(d,i){ d.classList.toggle('active', i === idx-1); });
+            if(nLbl) nLbl.textContent = String(idx).padStart(2,'0');
+          }
+        });
+      }, {threshold:.5, rootMargin:'-30% 0px -30% 0px'});
+      items.forEach(function(n){ actIO.observe(n); });
+
+      // Smooth-Scroll für Kapitel-Dots
+      dots.forEach(function(d){
+        d.addEventListener('click', function(e){
+          var href = d.getAttribute('href');
+          if(!href || href.charAt(0) !== '#') return;
+          e.preventDefault();
+          var t = document.querySelector(href);
+          if(t) t.scrollIntoView({behavior:'smooth', block:'center'});
+        });
+      });
+    })();
+    </script>
+</body>
+
+</html>

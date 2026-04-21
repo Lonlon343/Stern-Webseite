@@ -1,0 +1,216 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<title>GeoWorks Bau – Referenzen</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="shared/tokens.css">
+<link rel="stylesheet" href="shared/global.css">
+<style>
+/* Filters / Top bar */
+.topbar { display: grid; grid-template-columns: 1.3fr 1fr; gap: 24px; border-top: 1px solid var(--gw-line); border-bottom: 1px solid var(--gw-line); padding: 20px 0; margin-bottom: 40px; }
+.filters { display: flex; gap: 8px; flex-wrap: wrap; align-items: center; }
+.filters label { font-size: 12px; color: var(--gw-muted); margin-right: 6px; font-family: var(--gw-font-mono); letter-spacing: .12em; text-transform: uppercase; }
+.chip { border: 1px solid var(--gw-line); padding: 8px 14px; font-size: 13px; font-weight: 500; cursor: pointer; transition: background .15s; }
+.chip:hover { background: rgba(0,0,0,.04); }
+.chip.on { background: var(--gw-ink); border-color: var(--gw-ink); color: #fff; }
+.search { display: flex; align-items: center; gap: 8px; border: 1px solid var(--gw-line); padding: 0 14px; justify-content: space-between; }
+.search input { border: none; outline: none; background: transparent; padding: 12px 0; font-family: inherit; font-size: 14px; width: 100%; }
+.search .kbd { font-family: var(--gw-font-mono); font-size: 11px; color: var(--gw-muted); border: 1px solid var(--gw-line); padding: 2px 6px; }
+
+/* Feature */
+.feat { display: grid; grid-template-columns: 1.4fr 1fr; border: 1px solid var(--gw-line); background: #fff; margin-bottom: 80px; }
+.feat .img { background: var(--gw-paper); min-height: 460px; position: relative; border-right: 1px solid var(--gw-line); }
+.feat .img .tag { position: absolute; left: 16px; top: 16px; background: var(--gw-red); color: #fff; font-family: var(--gw-font-mono); font-size: 11px; letter-spacing: .14em; text-transform: uppercase; padding: 4px 10px; z-index: 2; }
+.feat .body { padding: 48px; }
+.feat .body .n { font-family: var(--gw-font-mono); font-size: 12px; color: var(--gw-red); letter-spacing: .14em; }
+.feat .body h2 { font-family: var(--gw-font-display); font-size: 40px; line-height: 1.05; letter-spacing: -0.02em; font-weight: 600; margin: 10px 0 16px; }
+.feat .body p { font-size: 16px; line-height: 1.55; color: var(--gw-ink); max-width: 44ch; }
+.feat .body dl { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 36px; }
+.feat .body dt { font-family: var(--gw-font-mono); font-size: 11px; color: var(--gw-muted); letter-spacing: .12em; text-transform: uppercase; }
+.feat .body dd { margin: 6px 0 0; font-weight: 600; font-size: 17px; letter-spacing: -0.01em; }
+.feat .body .btns { display: flex; gap: 12px; margin-top: 40px; }
+
+.switch { display: flex; justify-content: space-between; align-items: center; margin: 0 0 32px; }
+.switch h2 { font-family: var(--gw-font-display); font-size: 38px; margin: 0; letter-spacing: -0.02em; font-weight: 600; }
+.switch .toggle { display: flex; border: 1px solid var(--gw-line); }
+.switch .toggle div { padding: 8px 14px; font-size: 12px; font-family: var(--gw-font-mono); letter-spacing: .12em; text-transform: uppercase; cursor: pointer; }
+.switch .toggle div.on { background: var(--gw-ink); color: #fff; }
+
+.r-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; padding-bottom: 80px; }
+.r-card { border: 1px solid var(--gw-line); background: #fff; display: flex; flex-direction: column; min-height: 380px; transition: .2s; }
+.r-card:hover { border-color: #ccc; box-shadow: 0 12px 40px rgba(0,0,0,.04); transform: translateY(-4px); }
+.r-card .img { background: var(--gw-paper); aspect-ratio: 4/3; position: relative; border-bottom: 1px solid var(--gw-line); }
+.r-card .img .tag { position: absolute; left: 10px; top: 10px; background: #fff; border: 1px solid var(--gw-line); font-family: var(--gw-font-mono); font-size: 10px; letter-spacing: .12em; text-transform: uppercase; padding: 3px 8px; z-index: 2;}
+.r-card .img .idx { position: absolute; right: 10px; top: 10px; font-family: var(--gw-font-mono); font-size: 10px; letter-spacing: .12em; color: var(--gw-muted); background: #fff; border: 1px solid var(--gw-line); padding: 3px 6px; z-index: 2;}
+.r-card .b { padding: 24px; flex: 1; display: flex; flex-direction: column; gap: 12px; }
+.r-card h3 { font-family: var(--gw-font-display); font-size: 22px; margin: 0; line-height: 1.15; font-weight: 600; letter-spacing: -0.01em; }
+.r-card .meta { font-family: var(--gw-font-mono); font-size: 11px; color: var(--gw-muted); letter-spacing: .1em; text-transform: uppercase; display: flex; justify-content: space-between; }
+.r-card .foot { margin-top: auto; padding-top: 16px; border-top: 1px dashed var(--gw-line); font-family: var(--gw-font-mono); font-size: 11px; letter-spacing: .12em; text-transform: uppercase; color: var(--gw-red); }
+
+.pager { display: flex; justify-content: center; gap: 8px; margin-bottom: 120px; font-family: var(--gw-font-mono); font-size: 13px; }
+.pager b { border: 1px solid var(--gw-line); padding: 10px 14px; cursor: pointer; font-weight: normal; }
+.pager b:hover { background: rgba(0,0,0,.04); }
+.pager b.on { background: var(--gw-ink); color: #fff; border-color: var(--gw-ink); font-weight: 500; }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="gw-nav gw-nav--solid">
+  <a class="gw-logo" href="index.html"><span class="mark"></span> GeoWorks<span style="opacity:.6;font-weight:400">·Bau</span></a>
+  <ul>
+    <li><a href="index.html">Startseite</a></li>
+    <li><a href="leistungen.html">Leistungen</a></li>
+    <li><a href="referenzen.html" class="active">Referenzen</a></li>
+    <li><a href="ueber-uns.html">Über uns</a></li>
+    <li><a href="karriere.html">Karriere</a></li>
+    <li><a href="kontakt.html">Kontakt</a></li>
+  </ul>
+  <div class="actions">
+    <span class="phone">T +49 176 301 89 229</span>
+    <a href="kontakt.html" class="gw-btn gw-btn--red">Projekt anfragen <span class="arr">→</span></a>
+  </div>
+</nav>
+
+<!-- HEADER -->
+<header class="page-header">
+  <div class="gw-container">
+    <div class="grid">
+      <div>
+        <div class="gw-eyebrow eyebrow"><span class="dot"></span>Referenzen / 140+ Projekte</div>
+        <h1>Projekte,<br>die für sich<br><u>sprechen.</u></h1>
+      </div>
+      <div>
+        <p>Ein Auszug aus über 140 realisierten Projekten aus Hochbau, Tiefbau und Sanierung. Filter nach Gewerk, Region oder Jahr; Detailseite je Projekt mit Kennzahlen, Bildern und Ansprechpartner.</p>
+      </div>
+    </div>
+  </div>
+</header>
+
+<section style="padding: 40px 0; background: var(--gw-white)">
+  <div class="gw-container">
+    <div class="topbar">
+      <div class="filters">
+        <label>Gewerk</label>
+        <div class="chip on">Alle</div>
+        <div class="chip">Hochbau</div>
+        <div class="chip">Tiefbau</div>
+        <div class="chip">Sanierung</div>
+        <label style="margin-left:24px">Jahr</label>
+        <div class="chip">2026</div>
+        <div class="chip on">2025</div>
+        <div class="chip">2024</div>
+      </div>
+      <div class="search">
+        <input type="text" placeholder="Projekt / Ort suchen …">
+        <span class="kbd">⌘K</span>
+      </div>
+    </div>
+
+    <!-- Featured -->
+    <article class="feat">
+      <div class="img gw-ph">
+        <span class="tag">Feature · Laufend</span>
+      </div>
+      <div class="body">
+        <div class="n">P–044</div>
+        <h2>Baugrube A66,<br>Frankfurt/M.</h2>
+        <p>Verbauwände und Aushub auf –18 m unter laufendem Verkehr. Enge Toleranzen, anspruchsvoller Baugrund, strikter Terminplan.</p>
+        <dl>
+          <div><dt>Bauherr</dt><dd>Privat</dd></div>
+          <div><dt>Gewerk</dt><dd>Spezialtiefbau</dd></div>
+          <div><dt>Leistung</dt><dd>Verbau / Aushub</dd></div>
+          <div><dt>Status</dt><dd>62 % · laufend</dd></div>
+        </dl>
+        <div class="btns">
+          <a href="#" class="gw-btn gw-btn--light">Detailansicht <span class="arr">→</span></a>
+        </div>
+      </div>
+    </article>
+
+    <div class="switch">
+      <h2>Weitere Projekte</h2>
+      <div class="toggle"><div class="on">Raster</div><div>Liste</div><div>Karte</div></div>
+    </div>
+
+    <div class="r-grid">
+      <div class="r-card">
+        <div class="img gw-ph"><span class="tag">Hochbau</span><span class="idx">P–001</span></div>
+        <div class="b"><h3>Bürokomplex Rheinufer</h3><div class="meta"><span>Düsseldorf</span><span>14.800 m²</span></div><p class="gw-mono" style="margin:0">2025 · Neubau</p><div class="foot">Details →</div></div>
+      </div>
+      <div class="r-card">
+        <div class="img gw-ph"><span class="tag">Tiefbau</span><span class="idx">P–014</span></div>
+        <div class="b"><h3>Kanalsanierung Nord</h3><div class="meta"><span>Leipzig</span><span>3,2 km</span></div><p class="gw-mono" style="margin:0">2024 · ÖR</p><div class="foot">Details →</div></div>
+      </div>
+      <div class="r-card">
+        <div class="img gw-ph"><span class="tag">Wohnen</span><span class="idx">P–022</span></div>
+        <div class="b"><h3>Quartier Hafenbogen</h3><div class="meta"><span>Hamburg</span><span>86 WE</span></div><p class="gw-mono" style="margin:0">2025 · Neubau</p><div class="foot">Details →</div></div>
+      </div>
+      <div class="r-card">
+        <div class="img gw-ph"><span class="tag">Sanierung</span><span class="idx">P–031</span></div>
+        <div class="b"><h3>Verwaltungsgebäude Bismarck</h3><div class="meta"><span>Bonn</span><span>Energet. Vollsanierung</span></div><p class="gw-mono" style="margin:0">2024</p><div class="foot">Details →</div></div>
+      </div>
+      <div class="r-card">
+        <div class="img gw-ph"><span class="tag">Industrie</span><span class="idx">P–056</span></div>
+        <div class="b"><h3>Logistikhalle West</h3><div class="meta"><span>Hannover</span><span>8.900 m²</span></div><p class="gw-mono" style="margin:0">2025</p><div class="foot">Details →</div></div>
+      </div>
+      <div class="r-card">
+        <div class="img gw-ph"><span class="tag">Tiefbau</span><span class="idx">P–062</span></div>
+        <div class="b"><h3>Straßenbau B3 Teilabschnitt</h3><div class="meta"><span>Hessen</span><span>1,6 km</span></div><p class="gw-mono" style="margin:0">2024</p><div class="foot">Details →</div></div>
+      </div>
+    </div>
+
+    <div class="pager">
+      <b>◂</b><b class="on">1</b><b>2</b><b>3</b><b>…</b><b>24</b><b>▸</b>
+    </div>
+
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="a-cta">
+  <div class="gw-container">
+    <div class="inner">
+      <div>
+        <div class="gw-eyebrow" style="color:rgba(255,255,255,.7)"><span class="dot"></span>Projekt planen</div>
+        <h2 class="gw-h2" style="margin-top:14px">Ihr Projekt könnte hier stehen.<br>Lassen Sie uns darüber sprechen.</h2>
+        <div class="row">
+          <a href="kontakt.html" class="gw-btn gw-btn--red">Projekt anfragen <span class="arr">→</span></a>
+          <a href="#" class="gw-btn gw-btn--ghost" style="color:#fff;border-color:rgba(255,255,255,.4)">+49 176 301 89 229</a>
+        </div>
+      </div>
+      <div style="font-family:var(--gw-font-mono);font-size:12px;color:rgba(255,255,255,.7);line-height:1.8;letter-spacing:.05em">
+        GEOWORKS BAU GMBH<br>
+        MUSTERSTRASSE 12<br>
+        00000 MUSTERSTADT<br>
+        STERN@GEOWORKSBAU.DE
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="a-foot">
+  <div class="gw-container">
+    <div class="grid">
+      <div>
+        <a class="gw-logo" href="index.html" style="color:#fff"><span class="mark"></span> GeoWorks·Bau</a>
+        <p style="margin-top:20px;max-width:36ch;color:rgba(255,255,255,.6)">Generalunternehmer für Hoch- und Tiefbau. Sitz in Musterstadt, deutschlandweit im Einsatz.</p>
+      </div>
+      <div><h4>Leistungen</h4><ul><li><a href="#">Hochbau</a></li><li><a href="#">Tiefbau</a></li><li><a href="#">Schlüsselfertig</a></li><li><a href="#">Sanierung</a></li><li><a href="#">Projektsteuerung</a></li></ul></div>
+      <div><h4>Unternehmen</h4><ul><li><a href="ueber-uns.html">Über uns</a></li><li><a href="referenzen.html">Referenzen</a></li><li><a href="karriere.html">Karriere</a></li><li><a href="kontakt.html">Kontakt</a></li></ul></div>
+      <div><h4>Kontakt</h4><ul><li>+49 176 301 89 229</li><li>stern@geoworksbau.de</li><li>Mo–Fr 08:00–18:00</li></ul></div>
+    </div>
+    <div class="legal">
+      <span>© 2026 GeoWorks Bau GmbH</span>
+      <span><a href="#">Impressum</a> · <a href="#">Datenschutz</a> · <a href="#">AGB</a></span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

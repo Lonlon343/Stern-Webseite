@@ -1,0 +1,293 @@
+<!doctype html>
+<html lang="de">
+
+<head>
+  <meta charset="utf-8">
+  <title>GeoWorks Bau – Karriere</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="shared/tokens.css">
+  <link rel="stylesheet" href="shared/global.css">
+  <style>
+    .benefits-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 40px;
+      margin: 80px 0;
+    }
+
+    .benefit-card {
+      padding: 32px;
+      border: 1px solid var(--gw-line);
+      background: #fff;
+    }
+
+    .benefit-card .icon {
+      font-family: var(--gw-font-mono);
+      font-size: 24px;
+      color: var(--gw-red);
+      margin-bottom: 24px;
+    }
+
+    .benefit-card h4 {
+      font-family: var(--gw-font-display);
+      font-size: 20px;
+      font-weight: 600;
+      margin: 0 0 12px;
+    }
+
+    .benefit-card p {
+      font-size: 15px;
+      color: var(--gw-muted);
+      line-height: 1.5;
+      margin: 0;
+    }
+
+    .jobs-section {
+      padding: 120px 0;
+      background: var(--gw-paper);
+      border-top: 1px solid var(--gw-line);
+    }
+
+    .job-list {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      border-top: 1px solid var(--gw-line);
+      margin-top: 48px;
+    }
+
+    .job-row {
+      display: grid;
+      grid-template-columns: 1fr 2fr auto;
+      gap: 40px;
+      padding: 32px 0;
+      border-bottom: 1px solid var(--gw-line);
+      align-items: center;
+      transition: .2s;
+      cursor: pointer;
+    }
+
+    .job-row:hover {
+      padding-left: 16px;
+      background: rgba(0, 0, 0, .02);
+    }
+
+    .job-row .meta {
+      font-family: var(--gw-font-mono);
+      font-size: 12px;
+      color: var(--gw-muted);
+      letter-spacing: .1em;
+      text-transform: uppercase;
+    }
+
+    .job-row h3 {
+      font-family: var(--gw-font-display);
+      font-size: 24px;
+      font-weight: 600;
+      margin: 0;
+      line-height: 1.2;
+    }
+
+    .job-row p {
+      font-size: 15px;
+      color: var(--gw-ink);
+      margin: 6px 0 0;
+    }
+
+    .job-row .arr {
+      color: var(--gw-red);
+      font-family: var(--gw-font-mono);
+      font-size: 18px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- NAV -->
+  <nav class="gw-nav gw-nav--solid">
+    <a class="gw-logo" href="index.html"><span class="mark"></span> GeoWorks<span
+        style="opacity:.6;font-weight:400">·Bau</span></a>
+    <ul>
+      <li><a href="index.html">Startseite</a></li>
+      <li><a href="leistungen.html">Leistungen</a></li>
+      <li><a href="referenzen.html">Referenzen</a></li>
+      <li><a href="ueber-uns.html">Über uns</a></li>
+      <li><a href="karriere.html" class="active">Karriere</a></li>
+      <li><a href="kontakt.html">Kontakt</a></li>
+    </ul>
+    <div class="actions">
+      <span class="phone">T +49 176 301 89 229</span>
+      <a href="kontakt.html" class="gw-btn gw-btn--red">Projekt anfragen <span class="arr">→</span></a>
+    </div>
+  </nav>
+
+  <!-- HEADER -->
+  <header class="page-header">
+    <div class="gw-container">
+      <div class="grid">
+        <div>
+          <div class="gw-eyebrow eyebrow"><span class="dot"></span>Karriere</div>
+          <h1>Zukunft bauen.<br>Im <u>Team.</u></h1>
+        </div>
+        <div>
+          <p>Hinter jedem erfolgreichen Bauwerk stehen die Menschen, die es erschaffen haben. Wir suchen kontinuierlich
+            nach Fachkräften, die unseren Anspruch an Qualität und Verlässlichkeit teilen.</p>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- BENEFITS -->
+  <section style="background: var(--gw-white); padding: 80px 0;">
+    <div class="gw-container">
+      <div class="gw-eyebrow"><span class="dot"></span>Ihre Perspektive</div>
+      <h2 class="gw-h2" style="margin-top:16px;">Warum GeoWorks Bau?</h2>
+
+      <div class="benefits-grid">
+        <div class="benefit-card">
+          <div class="icon">01</div>
+          <h4>Unbefristet</h4>
+          <p>Wir bauen auf langfristige Zusammenarbeit. Ein unbefristeter Arbeitsvertrag sowie zukunftssichere
+            Perspektiven sind für uns selbstverständlich.</p>
+        </div>
+        <div class="benefit-card">
+          <div class="icon">02</div>
+          <h4>Moderne Ausstattung</h4>
+          <p>Von der digitalen Erfassung auf der Baustelle per Tablet bis zum modernen Fuhrpark – Sie arbeiten mit dem
+            besten Werkzeug.</p>
+        </div>
+        <div class="benefit-card">
+          <div class="icon">03</div>
+          <h4>Weiterbildung</h4>
+          <p>Wir fördern Ihre Entwicklung durch regelmäßige Schulungen und Weiterbildungen im Bereich Bautechnik und
+            Führung.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- JOBS -->
+  <section class="jobs-section">
+    <div class="gw-container">
+      <div class="gw-eyebrow"><span class="dot"></span>Offene Stellen</div>
+      <div style="display:flex; justify-content:space-between; align-items:end;">
+        <h2 class="gw-h2" style="margin-top:16px;">Aktuelle Vakanzen.</h2>
+        <div class="gw-mono" style="color:var(--gw-muted);">Musterstadt &amp; Bundesweit</div>
+      </div>
+
+      <div class="job-list">
+        <div class="job-row">
+          <div class="meta">Vollzeit · Musterstadt</div>
+          <div>
+            <h3>Bauleiter (m/w/d) Hochbau</h3>
+            <p>Verantwortung für anspruchsvolle Projekte von LPH 6–8.</p>
+          </div>
+          <div class="arr">→</div>
+        </div>
+        <div class="job-row">
+          <div class="meta">Vollzeit · Musterstadt / Regional</div>
+          <div>
+            <h3>Polier (m/w/d) Tiefbau / Erd- und Straßenbau</h3>
+            <p>Führung des Teams auf der Baustelle und Qualitätskontrolle.</p>
+          </div>
+          <div class="arr">→</div>
+        </div>
+        <div class="job-row">
+          <div class="meta">Vollzeit / Teilzeit · Musterstadt</div>
+          <div>
+            <h3>Kalkulator (m/w/d) Schlüsselfertigbau</h3>
+            <p>Termin- und kostensichere Erstellung von Angeboten.</p>
+          </div>
+          <div class="arr">→</div>
+        </div>
+        <div class="job-row">
+          <div class="meta">Initiativ</div>
+          <div>
+            <h3>Nichts Passendes dabei?</h3>
+            <p>Wir freuen uns jederzeit über Ihre Initiativbewerbung!</p>
+          </div>
+          <div class="arr">→</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="a-cta">
+    <div class="gw-container">
+      <div class="inner">
+        <div>
+          <div class="gw-eyebrow" style="color:rgba(255,255,255,.7)"><span class="dot"></span>Bewerbung</div>
+          <h2 class="gw-h2" style="margin-top:14px">Klingt gut?<br>Lassen Sie uns sprechen.</h2>
+          <p>Senden Sie uns einfach Ihren Lebenslauf oder rufen Sie uns direkt an. Wir melden uns zeitnah bei Ihnen
+            zurück.</p>
+          <div class="row">
+            <a href="kontakt.html" class="gw-btn gw-btn--red">Jetzt bewerben <span class="arr">→</span></a>
+            <a href="#" class="gw-btn gw-btn--ghost" style="color:#fff;border-color:rgba(255,255,255,.4)">+49 176 301 89
+              229</a>
+          </div>
+        </div>
+        <div
+          style="font-family:var(--gw-font-mono);font-size:12px;color:rgba(255,255,255,.7);line-height:1.8;letter-spacing:.05em">
+          GEOWORKS BAU GMBH<br>
+          MUSTERSTRASSE 12<br>
+          00000 MUSTERSTADT<br>
+          BEWERBUNG@GEOWORKSBAU.DE
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="a-foot">
+    <div class="gw-container">
+      <div class="grid">
+        <div>
+          <a class="gw-logo" href="index.html" style="color:#fff"><span class="mark"></span> GeoWorks·Bau</a>
+          <p style="margin-top:20px;max-width:36ch;color:rgba(255,255,255,.6)">Generalunternehmer für Hoch- und Tiefbau.
+            Sitz in Musterstadt, deutschlandweit im Einsatz.</p>
+        </div>
+        <div>
+          <h4>Leistungen</h4>
+          <ul>
+            <li><a href="#">Hochbau</a></li>
+            <li><a href="#">Tiefbau</a></li>
+            <li><a href="#">Schlüsselfertig</a></li>
+            <li><a href="#">Sanierung</a></li>
+            <li><a href="#">Projektsteuerung</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Unternehmen</h4>
+          <ul>
+            <li><a href="ueber-uns.html">Über uns</a></li>
+            <li><a href="referenzen.html">Referenzen</a></li>
+            <li><a href="karriere.html">Karriere</a></li>
+            <li><a href="kontakt.html">Kontakt</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Kontakt</h4>
+          <ul>
+            <li>+49 176 301 89 229</li>
+            <li>stern@geoworksbau.de</li>
+            <li>Mo–Fr 08:00–18:00</li>
+          </ul>
+        </div>
+      </div>
+      <div class="legal">
+        <span>© 2026 GeoWorks Bau GmbH</span>
+        <span><a href="#">Impressum</a> · <a href="#">Datenschutz</a> · <a href="#">AGB</a></span>
+      </div>
+    </div>
+  </footer>
+
+</body>
+
+</html>
