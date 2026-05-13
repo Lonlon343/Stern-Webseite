@@ -16,8 +16,8 @@
 .l-card:hover { border-color: #ccc; box-shadow: 0 12px 40px rgba(0,0,0,.04); transform: translateY(-4px); }
 .l-card .num { font-family: var(--gw-font-mono); font-size: 12px; color: var(--gw-red); letter-spacing: .14em; }
 .l-card h3 { font-family: var(--gw-font-display); font-size: 28px; line-height: 1.1; letter-spacing: -0.015em; margin: 20px 0; font-weight: 600; }
-.l-card .img { background: var(--gw-paper); aspect-ratio: 4/3; position: relative; margin-bottom: 24px; }
-.l-card .img .cap { position: absolute; left: 10px; bottom: 10px; font-family: var(--gw-font-mono); font-size: 10px; letter-spacing: .12em; text-transform: uppercase; background: #fff; padding: 4px 6px; }
+.l-card .img { aspect-ratio: 4/3; position: relative; margin-bottom: 24px; overflow: hidden; }
+.l-card .img img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block; }
 .l-card ul { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 6px; font-size: 14px; color: var(--gw-muted); }
 .l-card ul li::before { content: "— "; color: var(--gw-line); }
 .l-card .foot { margin-top: auto; padding-top: 20px; border-top: 1px dashed var(--gw-line); font-family: var(--gw-font-mono); font-size: 11px; letter-spacing: .12em; text-transform: uppercase; display: flex; justify-content: space-between; }
@@ -36,7 +36,7 @@
 
 <!-- NAV -->
 <nav class="gw-nav gw-nav--solid">
-  <a class="gw-logo" href="index.html"><span class="mark"></span> GeoWorks<span style="opacity:.6;font-weight:400">·Bau</span></a>
+  <a class="gw-logo" href="index.html"><img src="logo.png" alt="GeoWorks Bau GmbH"></a>
   <ul>
     <li><a href="index.html">Startseite</a></li>
     <li><a href="leistungen.html" class="active">Leistungen</a></li>
@@ -62,9 +62,9 @@
       <div>
         <p>Sechs Kernbereiche, ein durchgängiger Qualitätsanspruch. Wählen Sie einen Bereich für Details, technische Schwerpunkte und passende Referenzen.</p>
         <div class="kpi-row">
-          <div><b>6</b><div class="gw-mono" style="color:var(--gw-muted);margin-top:4px">Leistungsbereiche</div></div>
-          <div><b>140<sup>+</sup></b><div class="gw-mono" style="color:var(--gw-muted);margin-top:4px">Projekte</div></div>
-          <div><b>35</b><div class="gw-mono" style="color:var(--gw-muted);margin-top:4px">Mitarbeiter</div></div>
+          <div><b>30<sup>+</sup></b><div class="gw-mono" style="color:var(--gw-muted);margin-top:4px">Jahre Branchenerfahrung im Team</div></div>
+          <div><b>50</b><div class="gw-mono" style="color:var(--gw-muted);margin-top:4px">Projekte vor Firmengründung</div></div>
+          <div><b>16</b><div class="gw-mono" style="color:var(--gw-muted);margin-top:4px">Bundesländer im Einsatzgebiet</div></div>
         </div>
       </div>
     </div>
@@ -75,59 +75,50 @@
 <section style="background:var(--gw-white)">
   <div class="gw-container">
     
-    <div class="filter-bar">
-      <div class="chips">
-        <div class="chip on">Alle</div>
-        <div class="chip">Hochbau</div>
-        <div class="chip">Tiefbau</div>
-        <div class="chip">Sanierung</div>
-        <div class="chip">Projektsteuerung</div>
-      </div>
-      <div class="gw-mono" style="color:var(--gw-muted)">Sortiert nach <u style="color:var(--gw-ink);cursor:pointer">Relevanz</u> · Alphabetisch</div>
-    </div>
+  
 
     <div class="l-grid">
       <div class="l-card">
         <div class="num">01</div>
         <h3>Hochbau</h3>
-        <div class="img gw-ph"><span class="cap">IMG · HOCHBAU</span></div>
+        <div class="img"><img src="assets/Hochbau.png" alt="Hochbau"></div>
         <ul><li>Schlüsselfertig</li><li>Gewerbe / Wohnen / Industrie</li><li>Neubau &amp; Umbau</li></ul>
-        <div class="foot"><span>Details</span><a href="#">Zur Seite →</a></div>
+        <div class="foot"><span>Details</span></div>
       </div>
       <div class="l-card">
         <div class="num">02</div>
         <h3>Tiefbau</h3>
-        <div class="img gw-ph"><span class="cap">IMG · TIEFBAU</span></div>
+        <div class="img"><img src="assets/Tiefbau.png" alt="Tiefbau"></div>
         <ul><li>Erd- und Kanalbau</li><li>Straßenbau</li><li>Spezialtiefbau</li></ul>
-        <div class="foot"><span>Details</span><a href="#">Zur Seite →</a></div>
+        <div class="foot"><span>Details</span></div>
       </div>
       <div class="l-card">
         <div class="num">03</div>
         <h3>Schlüsselfertigbau</h3>
-        <div class="img gw-ph"><span class="cap">IMG · SCHLÜSSELFERTIG</span></div>
+        <div class="img"><img src="assets/Schlüsselfertigbau.png" alt="Schlüsselfertigbau"></div>
         <ul><li>GU-Leistung</li><li>Festpreis &amp; Termin</li><li>Ein Ansprechpartner</li></ul>
-        <div class="foot"><span>Details</span><a href="#">Zur Seite →</a></div>
+        <div class="foot"><span>Details</span></div>
       </div>
       <div class="l-card">
         <div class="num">04</div>
         <h3>Sanierung &amp; Umbau</h3>
-        <div class="img gw-ph"><span class="cap">IMG · SANIERUNG</span></div>
+        <div class="img"><img src="assets/Sanierung und Umbau.png" alt="Sanierung & Umbau"></div>
         <ul><li>Denkmalsubstanz</li><li>Bestand im Betrieb</li><li>Energetisch</li></ul>
-        <div class="foot"><span>Details</span><a href="#">Zur Seite →</a></div>
+        <div class="foot"><span>Details</span></div>
       </div>
       <div class="l-card">
         <div class="num">05</div>
         <h3>Projektsteuerung</h3>
-        <div class="img gw-ph"><span class="cap">IMG · STEUERUNG</span></div>
+        <div class="img"><img src="assets/Projektsteuerung.png" alt="Projektsteuerung"></div>
         <ul><li>Bauleitung</li><li>Ausschreibung / Vergabe</li><li>Controlling</li></ul>
-        <div class="foot"><span>Details</span><a href="#">Zur Seite →</a></div>
+        <div class="foot"><span>Details</span></div>
       </div>
       <div class="l-card">
         <div class="num">06</div>
         <h3>Netzwerk &amp; Nachunternehmer</h3>
-        <div class="img gw-ph"><span class="cap">IMG · NETZWERK</span></div>
+        <div class="img"><img src="assets/Netzwerk und Nachunternehmer.png" alt="Netzwerk & Nachunternehmer"></div>
         <ul><li>Langjährige Fachpartner</li><li>Rohbau, TGA, Ausbau</li><li>Qualität durch Kontinuität</li></ul>
-        <div class="foot"><span>Details</span><a href="#">Zur Seite →</a></div>
+        <div class="foot"><span>Details</span></div>
       </div>
     </div>
   </div>
@@ -184,8 +175,8 @@
       </div>
       <div style="font-family:var(--gw-font-mono);font-size:12px;color:rgba(255,255,255,.7);line-height:1.8;letter-spacing:.05em">
         GEOWORKS BAU GMBH<br>
-        MUSTERSTRASSE 12<br>
-        00000 MUSTERSTADT<br>
+        Zum Portsmouthplatz 6<br>
+        47051 Duisburg<br>
         STERN@GEOWORKSBAU.DE
       </div>
     </div>
@@ -197,8 +188,8 @@
   <div class="gw-container">
     <div class="grid">
       <div>
-        <a class="gw-logo" href="index.html" style="color:#fff"><span class="mark"></span> GeoWorks·Bau</a>
-        <p style="margin-top:20px;max-width:36ch;color:rgba(255,255,255,.6)">Generalunternehmer für Hoch- und Tiefbau. Sitz in Musterstadt, deutschlandweit im Einsatz.</p>
+        <a class="gw-logo" href="index.html"><img src="logo.png" alt="GeoWorks Bau GmbH"></a>
+        <p style="margin-top:20px;max-width:36ch;color:rgba(255,255,255,.6)">Generalunternehmer für Hoch- und Tiefbau. Sitz in Duisburg, deutschlandweit im Einsatz.</p>
       </div>
       <div><h4>Leistungen</h4><ul><li><a href="#">Hochbau</a></li><li><a href="#">Tiefbau</a></li><li><a href="#">Schlüsselfertig</a></li><li><a href="#">Sanierung</a></li><li><a href="#">Projektsteuerung</a></li></ul></div>
       <div><h4>Unternehmen</h4><ul><li><a href="ueber-uns.html">Über uns</a></li><li><a href="referenzen.html">Referenzen</a></li><li><a href="karriere.html">Karriere</a></li><li><a href="kontakt.html">Kontakt</a></li></ul></div>
