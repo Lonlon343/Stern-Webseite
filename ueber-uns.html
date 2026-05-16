@@ -27,6 +27,18 @@
 .leader-card h3 { font-family: var(--gw-font-display); font-size: 24px; margin: 0 0 4px; font-weight: 600; }
 .leader-card .role { font-family: var(--gw-font-mono); font-size: 12px; color: var(--gw-red); letter-spacing: .1em; text-transform: uppercase; margin-bottom: 24px; }
 .leader-card p { font-size: 15px; color: var(--gw-muted); line-height: 1.55; margin: 0; }
+
+/* Mobile ueber-uns */
+@media(max-width:767px){
+  .section-body{padding:64px 0}
+  .split-content{grid-template-columns:1fr;gap:32px}
+  .split-content p{font-size:16px}
+  .history-timeline{grid-template-columns:1fr 1fr;gap:16px;margin-top:40px}
+  .leadership-grid{grid-template-columns:1fr;gap:24px;margin-top:40px}
+}
+@media(max-width:480px){
+  .history-timeline{grid-template-columns:1fr}
+}
 </style>
 </head>
 <body>
@@ -46,6 +58,9 @@
     <span class="phone">T +49 176 301 89 229</span>
     <a href="kontakt.html" class="gw-btn gw-btn--red">Projekt anfragen <span class="arr">→</span></a>
   </div>
+  <button class="gw-nav-toggle" aria-label="Menü öffnen" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
 </nav>
 
 <!-- HEADER -->
@@ -180,5 +195,7 @@
   </div>
 </footer>
 
+
+<script src="shared/nav.js"></script>
 </body>
 </html>

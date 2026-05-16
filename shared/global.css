@@ -93,3 +93,22 @@
   border-color: var(--gw-ink);
   color: #fff;
 }
+
+/* ===== Mobile responsive (shared sections) ===== */
+@media(max-width:767px){
+  /* CTA */
+  .a-cta{padding:64px 0}
+  .a-cta .inner{grid-template-columns:1fr;gap:36px}
+
+  /* Footer */
+  .a-foot{padding:48px 0 20px}
+  .a-foot .grid{grid-template-columns:1fr 1fr;gap:28px}
+  .a-foot .legal{flex-direction:column;gap:8px;text-align:center;margin-top:36px}
+
+  /* Page header (subpages) */
+  .page-header{padding:90px 0 44px}
+  .page-header .grid{grid-template-columns:1fr;gap:24px}
+  .page-header h1{font-size:clamp(38px,10vw,56px)}
+  .page-header .kpi-row{gap:20px;flex-wrap:wrap}
+  .page-header .kpi-row b{font-size:26px}
+}

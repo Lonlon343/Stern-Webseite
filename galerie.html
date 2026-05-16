@@ -123,6 +123,15 @@
   z-index: 4;
 }
 
+/* Mobile gallery */
+@media(max-width:767px){
+  .g-grid{grid-template-columns:1fr 1fr;grid-auto-rows:200px;gap:8px;padding:24px 0 72px}
+  .g-item.big,.g-item.wide{grid-column:span 2}
+  .g-item.tall{grid-row:span 2}
+  .g-item .label{opacity:1;transform:none}
+  .g-item .overlay{opacity:1}
+}
+
 /* placeholder styling */
 .g-item.gw-ph .label {
   opacity: 1;
@@ -151,6 +160,9 @@
     <span class="phone">T +49 176 301 89 229</span>
     <a href="kontakt.html" class="gw-btn gw-btn--red">Projekt anfragen <span class="arr">→</span></a>
   </div>
+  <button class="gw-nav-toggle" aria-label="Menü öffnen" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
 </nav>
 
 <!-- HEADER -->
@@ -299,5 +311,7 @@
   </div>
 </footer>
 
+
+<script src="shared/nav.js"></script>
 </body>
 </html>

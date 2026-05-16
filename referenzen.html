@@ -55,6 +55,16 @@
 .pager b { border: 1px solid var(--gw-line); padding: 10px 14px; cursor: pointer; font-weight: normal; }
 .pager b:hover { background: rgba(0,0,0,.04); }
 .pager b.on { background: var(--gw-ink); color: #fff; border-color: var(--gw-ink); font-weight: 500; }
+
+/* Mobile referenzen */
+@media(max-width:767px){
+  .feat{grid-template-columns:1fr}
+  .feat .img{min-height:260px;border-right:none;border-bottom:1px solid var(--gw-line)}
+  .feat .body{padding:28px 20px}
+  .feat .body h2{font-size:28px}
+  .feat .body dl{grid-template-columns:1fr 1fr}
+  .r-grid{grid-template-columns:1fr;gap:16px;padding-bottom:48px}
+}
 </style>
 </head>
 <body>
@@ -74,6 +84,9 @@
     <span class="phone">T +49 176 301 89 229</span>
     <a href="kontakt.html" class="gw-btn gw-btn--red">Projekt anfragen <span class="arr">→</span></a>
   </div>
+  <button class="gw-nav-toggle" aria-label="Menü öffnen" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
 </nav>
 
 <!-- HEADER -->
@@ -188,5 +201,7 @@
   </div>
 </footer>
 
+
+<script src="shared/nav.js"></script>
 </body>
 </html>

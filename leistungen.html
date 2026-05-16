@@ -23,6 +23,18 @@
 .l-card .foot { margin-top: auto; padding-top: 20px; border-top: 1px dashed var(--gw-line); font-family: var(--gw-font-mono); font-size: 11px; letter-spacing: .12em; text-transform: uppercase; display: flex; justify-content: space-between; }
 .l-card .foot a { color: var(--gw-red); }
 
+/* Mobile leistungen */
+@media(max-width:767px){
+  .l-grid{grid-template-columns:1fr;gap:16px;padding:32px 0 72px}
+  .l-card{min-height:auto}
+  .l-steps{grid-template-columns:1fr 1fr;border-right:1px solid var(--gw-line)}
+  .l-step{min-height:auto;padding:24px 16px}
+  .l-process{padding:64px 0}
+}
+@media(max-width:480px){
+  .l-steps{grid-template-columns:1fr}
+}
+
 /* Process strip */
 .l-process { padding: 120px 0; border-top: 1px solid var(--gw-line); background: #fff; }
 .l-steps { display: grid; grid-template-columns: repeat(5, 1fr); gap: 0; border-top: 1px solid var(--gw-line); border-left: 1px solid var(--gw-line); margin-top: 48px; }
@@ -47,8 +59,11 @@
   </ul>
   <div class="actions">
     <span class="phone">T +49 176 301 89 229</span>
-    <a href="#" class="gw-btn gw-btn--red">Projekt anfragen <span class="arr">→</span></a>
+    <a href="kontakt.html" class="gw-btn gw-btn--red">Projekt anfragen <span class="arr">→</span></a>
   </div>
+  <button class="gw-nav-toggle" aria-label="Menü öffnen" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
 </nav>
 
 <!-- HEADER -->
@@ -202,5 +217,7 @@
   </div>
 </footer>
 
+
+<script src="shared/nav.js"></script>
 </body>
 </html>

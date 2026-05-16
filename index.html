@@ -618,6 +618,59 @@
                 position: static
             }
         }
+
+        /* ===== Mobile (index-specific) ===== */
+        @media(max-width:767px){
+          /* Hero */
+          .a-hero{min-height:100svh;height:100svh}
+          .a-hero .scroll,.a-hero .indexrow{display:none}
+          .a-hero .sub{font-size:16px;max-width:none}
+          .a-hero .cta-row{flex-direction:column;align-items:stretch;gap:10px}
+          .a-hero .cta-row .gw-btn{justify-content:center}
+          .a-hero .inner{padding-top:80px}
+
+          /* Stats */
+          .a-stats .row{grid-template-columns:1fr 1fr}
+          .a-stats .num{font-size:38px}
+          .a-stats .cell{padding:28px var(--gw-gutter)}
+
+          /* Intro */
+          .a-intro{padding:60px 0}
+          .a-intro .grid{grid-template-columns:1fr;gap:24px}
+          .a-intro p{font-size:17px}
+
+          /* Services */
+          .a-services{padding:60px 0}
+          .a-services .sticky-wrap{grid-template-columns:1fr;gap:0}
+          .a-services .sticky-chapter{position:static;padding:0 0 20px}
+          .a-services .sticky-chapter .progress-dots{display:none}
+          .a-services .item{grid-template-columns:36px 1fr;gap:12px;padding:22px 0}
+          .a-services .item .more{display:none}
+          .a-services .item h3{font-size:21px}
+          .a-services .item p{font-size:14px}
+
+          /* Projects */
+          .a-projects{padding:60px 0}
+          .a-projects header{flex-direction:column;align-items:flex-start;gap:20px;margin-bottom:28px}
+          .a-projects .grid{grid-template-columns:1fr;gap:10px}
+          .a-projects .card.big{grid-row:span 1;aspect-ratio:16/10}
+          .a-projects .card:not(.big){aspect-ratio:16/9}
+
+          /* Why */
+          .a-why{padding:60px 0}
+          .a-why .grid{grid-template-columns:1fr;gap:32px}
+          .a-why .pillars{grid-template-columns:1fr}
+          .a-why .pillar{padding:24px}
+        }
+
+        /* ===== Tablet (index-specific) ===== */
+        @media(min-width:768px) and (max-width:1024px){
+          .a-stats .num{font-size:44px}
+          .a-services .item{gap:24px}
+          .a-projects .grid{grid-template-columns:1fr 1fr;gap:12px}
+          .a-projects .card.big{grid-column:span 2;grid-row:span 1;aspect-ratio:16/7}
+          .a-why .pillars{gap:0}
+        }
     </style>
 </head>
 
@@ -639,8 +692,11 @@
         </ul>
         <div class="actions">
             <span class="phone">T +49 176 301 89 229</span>
-            <a href="#" class="gw-btn gw-btn--red">Projekt anfragen <span class="arr">→</span></a>
+            <a href="kontakt.html" class="gw-btn gw-btn--red">Projekt anfragen <span class="arr">→</span></a>
         </div>
+        <button class="gw-nav-toggle" aria-label="Menü öffnen" aria-expanded="false">
+            <span></span><span></span><span></span>
+        </button>
     </nav>
 
     <!-- HERO -->
@@ -952,6 +1008,7 @@
         </div>
     </footer>
 
+    <script src="shared/nav.js"></script>
     <script>
         (function () {
             var reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
