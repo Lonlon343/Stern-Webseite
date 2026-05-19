@@ -6,9 +6,13 @@
   function open()  { nav.classList.add('gw-nav--open');    toggle.setAttribute('aria-expanded', 'true');  toggle.setAttribute('aria-label', 'Menü schließen'); }
   function close() { nav.classList.remove('gw-nav--open'); toggle.setAttribute('aria-expanded', 'false'); toggle.setAttribute('aria-label', 'Menü öffnen'); }
 
-  // Toggle on button click — no stopPropagation so the event can
-  // still reach the document handler without interference
-  toggle.addEventListener('click', function () {
+  // pointerdown fires instantly on both mouse and touch with no iOS 300ms delay.
+  // Fall back to click on browsers without PointerEvent support.
+  var evtDown = window.PointerEvent ? 'pointerdown' : 'click';
+
+  toggle.addEventListener(evtDown, function (e) {
+    if (e.button !== undefined && e.button !== 0) return;
+    e.preventDefault(); // stops default focus ring and prevents duplicate click
     nav.classList.contains('gw-nav--open') ? close() : open();
   });
 
@@ -18,9 +22,16 @@
   });
 
   // Close when tapping outside the nav
-  document.addEventListener('click', function (e) {
+  document.addEventListener(evtDown, function (e) {
     if (nav.classList.contains('gw-nav--open') && !nav.contains(e.target)) {
       close();
     }
   });
+
+  // Overlay nav (index.html): stick and darken after scrolling past hero
+  if (!nav.classList.contains('gw-nav--solid')) {
+    window.addEventListener('scroll', function () {
+      nav.classList.toggle('gw-nav--scrolled', window.scrollY > 60);
+    }, { passive: true });
+  }
 })();

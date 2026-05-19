@@ -63,7 +63,9 @@ a{color:inherit;text-decoration:none}
   justify-content:space-between;padding:22px var(--gw-gutter);color:#fff;
   background:linear-gradient(180deg, rgba(0,0,0,0.7) 0%, transparent 100%);
   padding-bottom:40px;}
-.gw-nav--solid{position:relative;background:#fff;color:var(--gw-ink);border-bottom:1px solid var(--gw-line)}
+.gw-nav--solid{position:sticky;top:0;z-index:100;background:#fff;color:var(--gw-ink);border-bottom:1px solid var(--gw-line)}
+/* Overlay nav gains background + sticks after hero is scrolled past */
+.gw-nav--scrolled{position:fixed !important;top:0;background:rgba(0,0,0,.92) !important;z-index:200}
 .gw-logo{display:flex;align-items:center}
 .gw-logo img{height:38px;width:auto;display:block}
 .gw-nav ul{display:flex;gap:28px;list-style:none;padding:0;margin:0;font-size:14px;font-weight:500}
