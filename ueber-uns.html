@@ -14,11 +14,6 @@
 .split-content { display: grid; grid-template-columns: 1fr 1.4fr; gap: 80px; align-items: start; }
 .split-content p { font-size: 18px; line-height: 1.6; color: var(--gw-ink); margin-top: 0; margin-bottom: 24px; max-width: 52ch; }
 
-.history-timeline { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; margin-top: 64px; }
-.timeline-item { border-top: 2px solid var(--gw-red); padding-top: 24px; }
-.timeline-item .year { font-family: var(--gw-font-mono); font-size: 14px; color: var(--gw-red); letter-spacing: .1em; font-weight: 500; }
-.timeline-item h4 { font-family: var(--gw-font-display); font-size: 20px; font-weight: 600; margin: 12px 0 8px; }
-.timeline-item p { font-size: 14px; color: var(--gw-muted); line-height: 1.5; margin: 0; }
 
 .leadership-grid { margin-top: 64px; display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
 .leader-card { border: 1px solid var(--gw-line); display: flex; flex-direction: column; background: var(--gw-paper); }
@@ -33,12 +28,8 @@
   .section-body{padding:64px 0}
   .split-content{grid-template-columns:1fr;gap:32px}
   .split-content p{font-size:16px}
-  .history-timeline{grid-template-columns:1fr 1fr;gap:16px;margin-top:40px}
-  .leadership-grid{grid-template-columns:1fr;gap:24px;margin-top:40px}
+.leadership-grid{grid-template-columns:1fr;gap:24px;margin-top:40px}
   .section-leadership{padding:64px 0 !important}
-}
-@media(max-width:480px){
-  .history-timeline{grid-template-columns:1fr}
 }
 </style>
 </head>
@@ -96,29 +87,6 @@
       </div>
     </div>
 
-    <!-- TIMELINE -->
-    <div class="history-timeline">
-      <div class="timeline-item">
-        <div class="year">1998</div>
-        <h4>Gründung</h4>
-        <p>Als kleines Ingenieurbüro in Duisburg mit Fokus auf Projektsteuerung.</p>
-      </div>
-      <div class="timeline-item">
-        <div class="year">2005</div>
-        <h4>Erweiterung Tiefbau</h4>
-        <p>Eigene Bautrupps für den Tief- und Straßenbau werden aufgebaut.</p>
-      </div>
-      <div class="timeline-item">
-        <div class="year">2012</div>
-        <h4>Generalunternehmer</h4>
-        <p>Erste schlüsselfertige Übergaben von Wohnkomplexen und Gewerbebauten.</p>
-      </div>
-      <div class="timeline-item">
-        <div class="year">2026</div>
-        <h4>Zukunftsorientiert</h4>
-        <p>Fokus auf energetische Sanierung und nachhaltiges Bauen in 16 Bundesländern.</p>
-      </div>
-    </div>
   </div>
 </section>
 
