@@ -103,28 +103,27 @@ a{color:inherit;text-decoration:none}
 @keyframes gw-blink{50%{opacity:.3}}
 .gw-hero-video .timecode{position:absolute;right:24px;top:24px;font-family:var(--gw-font-mono);font-size:11px;letter-spacing:.1em;color:#fff;z-index:2}
 
-/* ===== Hamburger toggle ===== */
+/* ===== Hamburger toggle (CSS checkbox approach) ===== */
+.gw-nav-check{display:none}
 .gw-nav-toggle{
   display:none;flex-direction:column;justify-content:center;align-items:center;
-  gap:5px;background:none;border:none;cursor:pointer;
-  padding:0;color:inherit;flex-shrink:0;
-  width:44px;height:44px;
-  touch-action:manipulation;
-  -webkit-tap-highlight-color:transparent;
+  gap:5px;cursor:pointer;padding:0;color:inherit;flex-shrink:0;
+  width:44px;height:44px;-webkit-tap-highlight-color:transparent;
 }
 .gw-nav-toggle span{display:block;width:22px;height:2px;background:currentColor;transition:transform .25s,opacity .2s}
-.gw-nav--open .gw-nav-toggle span:nth-child(1){transform:translateY(7px) rotate(45deg)}
-.gw-nav--open .gw-nav-toggle span:nth-child(2){opacity:0}
-.gw-nav--open .gw-nav-toggle span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+/* Hamburger → X animation driven by CSS, no JS required */
+.gw-nav-check:checked ~ .gw-nav-toggle span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.gw-nav-check:checked ~ .gw-nav-toggle span:nth-child(2){opacity:0}
+.gw-nav-check:checked ~ .gw-nav-toggle span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
 
 /* ===== Mobile responsive ===== */
 @media(max-width:767px){
   :root{--gw-gutter:20px}
 
-  /* Overlay nav becomes fixed, above all content */
+  /* Overlay nav: fixed, above all content */
   .gw-nav:not(.gw-nav--solid){position:fixed;background:rgba(0,0,0,.82);z-index:200}
   .gw-nav--open:not(.gw-nav--solid){background:rgba(0,0,0,.96)}
-  .gw-nav--solid{z-index:200;position:relative}
+  .gw-nav--solid{z-index:200;position:sticky;top:0}
 
   .gw-nav{flex-wrap:wrap;padding:0 var(--gw-gutter);align-items:center;min-height:56px}
   .gw-nav .gw-logo{padding:9px 0}
@@ -134,7 +133,8 @@ a{color:inherit;text-decoration:none}
   }
   .gw-nav--solid ul{border-top-color:var(--gw-line)}
   .gw-nav ul li a{display:block;padding:12px 0;font-size:15px}
-  .gw-nav--open ul{display:flex}
+  /* Menu opens via pure CSS — no JS needed for this */
+  .gw-nav-check:checked ~ ul{display:flex}
   .gw-nav .actions{display:none}
   .gw-nav-toggle{display:flex}
 }
