@@ -55,12 +55,29 @@
   display: flex;
   gap: 40px;
   margin-top: 32px;
+  align-items: flex-start;
+}
+.page-header .kpi-row > div {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
 }
 .page-header .kpi-row b {
   font-family: var(--gw-font-display);
   font-size: 34px;
   font-weight: 600;
   letter-spacing: -0.02em;
+  line-height: 1;
+  display: block;
+}
+.page-header .kpi-row b sup {
+  font-size: 16px;
+  color: var(--gw-red);
+  font-weight: 500;
+  vertical-align: super;
+}
+.page-header .kpi-row .gw-mono {
+  margin-top: 0;
 }
 
 /* Base utility for filter bar */
@@ -104,11 +121,15 @@
   .a-foot{padding:48px 0 20px}
   .a-foot .grid{grid-template-columns:1fr 1fr;gap:28px}
   .a-foot .legal{flex-direction:column;gap:8px;text-align:center;margin-top:36px}
+}
+@media(max-width:480px){
+  .a-foot .grid{grid-template-columns:1fr;gap:24px}
 
   /* Page header (subpages) */
   .page-header{padding:90px 0 44px}
   .page-header .grid{grid-template-columns:1fr;gap:24px}
   .page-header h1{font-size:clamp(38px,10vw,56px)}
-  .page-header .kpi-row{gap:20px;flex-wrap:wrap}
+  .page-header .kpi-row{gap:16px 24px;flex-wrap:wrap}
+  .page-header .kpi-row > div{flex:0 0 auto}
   .page-header .kpi-row b{font-size:26px}
 }

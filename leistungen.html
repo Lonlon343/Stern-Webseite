@@ -27,12 +27,14 @@
 @media(max-width:767px){
   .l-grid{grid-template-columns:1fr;gap:16px;padding:32px 0 72px}
   .l-card{min-height:auto}
-  .l-steps{grid-template-columns:1fr 1fr;border-right:1px solid var(--gw-line)}
-  .l-step{min-height:auto;padding:24px 16px}
   .l-process{padding:64px 0}
+  .l-steps{grid-template-columns:1fr 1fr}
+  .l-step{min-height:auto;padding:20px 16px}
+  .l-step:last-child{grid-column:1 / -1}
 }
 @media(max-width:480px){
   .l-steps{grid-template-columns:1fr}
+  .l-step:last-child{grid-column:auto}
 }
 
 /* Process strip */
@@ -53,7 +55,6 @@
     <li><a href="index.html">Startseite</a></li>
     <li><a href="leistungen.html" class="active">Leistungen</a></li>
     <li><a href="referenzen.html">Referenzen</a></li>
-    <li><a href="galerie.html">Galerie</a></li>
     <li><a href="ueber-uns.html">Über uns</a></li>
     <li><a href="kontakt.html">Kontakt</a></li>
   </ul>
@@ -77,9 +78,9 @@
       <div>
         <p>Sechs Kernbereiche, ein durchgängiger Qualitätsanspruch. Wählen Sie einen Bereich für Details, technische Schwerpunkte und passende Referenzen.</p>
         <div class="kpi-row">
-          <div><b>30<sup>+</sup></b><div class="gw-mono" style="color:var(--gw-muted);margin-top:4px">Jahre Branchenerfahrung im Team</div></div>
-          <div><b>50</b><div class="gw-mono" style="color:var(--gw-muted);margin-top:4px">Projekte vor Firmengründung</div></div>
-          <div><b>16</b><div class="gw-mono" style="color:var(--gw-muted);margin-top:4px">Bundesländer im Einsatzgebiet</div></div>
+          <div><b>30<sup>+</sup></b><div class="gw-mono" style="color:var(--gw-muted)">Jahre Branchenerfahrung im Team</div></div>
+          <div><b>50<sup>+</sup></b><div class="gw-mono" style="color:var(--gw-muted)">Projekte vor Firmengründung</div></div>
+          <div><b>16</b><div class="gw-mono" style="color:var(--gw-muted)">Bundesländer im Einsatzgebiet</div></div>
         </div>
       </div>
     </div>
@@ -192,7 +193,7 @@
         GEOWORKS BAU GMBH<br>
         Zum Portsmouthplatz 6<br>
         47051 Duisburg<br>
-        STERN@GEOWORKSBAU.DE
+        INFO@GEOWORKSBAU.DE
       </div>
     </div>
   </div>
@@ -204,11 +205,11 @@
     <div class="grid">
       <div>
         <a class="gw-logo" href="index.html"><img src="logo.png" alt="GeoWorks Bau GmbH"></a>
-        <p style="margin-top:20px;max-width:36ch;color:rgba(255,255,255,.6)">Generalunternehmer für Hoch- und Tiefbau. Sitz in Duisburg, deutschlandweit im Einsatz.</p>
+        <p style="margin-top:20px;max-width:36ch;color:#fff">Generalunternehmer für Hoch- und Tiefbau. Sitz in Duisburg, deutschlandweit im Einsatz.</p>
       </div>
       <div><h4>Leistungen</h4><ul><li><a href="leistungen.html">Leistungen</a></li><li><a href="leistungen.html#ablauf">So arbeiten wir</a></li></ul></div>
-      <div><h4>Unternehmen</h4><ul><li><a href="ueber-uns.html">Über uns</a></li><li><a href="referenzen.html">Referenzen</a></li><li><a href="galerie.html">Galerie</a></li><li><a href="kontakt.html">Kontakt</a></li></ul></div>
-      <div><h4>Kontakt</h4><ul><li>+49 176 301 89 229</li><li>stern@geoworksbau.de</li><li>Mo–Fr 08:00–18:00</li></ul></div>
+      <div><h4>Unternehmen</h4><ul><li><a href="ueber-uns.html">Über uns</a></li><li><a href="referenzen.html">Referenzen</a></li><li><a href="kontakt.html">Kontakt</a></li></ul></div>
+      <div><h4>Kontakt</h4><ul><li>+49 176 301 89 229</li><li>info@geoworksbau.de</li><li>Mo–Fr 08:00–18:00</li></ul></div>
     </div>
     <div class="legal">
       <span>© 2026 GeoWorks Bau GmbH</span>
